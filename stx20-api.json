@@ -1,0 +1,4332 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "STX20 API",
+    "version": "0.1.0",
+    "description": "Aggregated STX20 Data"
+  },
+  "tags": [
+    {
+      "name": "token",
+      "description": "Token operations"
+    },
+    {
+      "name": "balance",
+      "description": "Balance operations"
+    },
+    {
+      "name": "listing",
+      "description": "Listing operations"
+    },
+    {
+      "name": "priceData",
+      "description": "PriceData operations"
+    }
+  ],
+  "paths": {
+    "/api/token": {
+      "get": {
+        "operationId": "list-Token",
+        "description": "List \"Token\" resources",
+        "tags": [
+          "token"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/include"
+          },
+          {
+            "$ref": "#/components/parameters/sort"
+          },
+          {
+            "$ref": "#/components/parameters/page-offset"
+          },
+          {
+            "$ref": "#/components/parameters/page-limit"
+          },
+          {
+            "name": "filter[id]",
+            "required": false,
+            "description": "Id filter",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply]",
+            "required": false,
+            "description": "Equality filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply$contains]",
+            "required": false,
+            "description": "String contains filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply$search]",
+            "required": false,
+            "description": "String full-text search filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit]",
+            "required": false,
+            "description": "Equality filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit$contains]",
+            "required": false,
+            "description": "String contains filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit$search]",
+            "required": false,
+            "description": "String full-text search filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[creationDate]",
+            "required": false,
+            "description": "Equality filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[creationDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[creationDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[creationDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[creationDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint]",
+            "required": false,
+            "description": "Equality filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint$contains]",
+            "required": false,
+            "description": "String contains filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint$search]",
+            "required": false,
+            "description": "String full-text search filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenListResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "create-Token",
+        "description": "Create a \"Token\" resource",
+        "tags": [
+          "token"
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/token/{id}": {
+      "get": {
+        "operationId": "fetch-Token",
+        "description": "Fetch a \"Token\" resource",
+        "tags": [
+          "token"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          },
+          {
+            "$ref": "#/components/parameters/include"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "update-Token-put",
+        "description": "Update a \"Token\" resource",
+        "tags": [
+          "token"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "update-Token-patch",
+        "description": "Update a \"Token\" resource",
+        "tags": [
+          "token"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "delete-Token",
+        "description": "Delete a \"Token\" resource",
+        "tags": [
+          "token"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/balance": {
+      "get": {
+        "operationId": "list-Balance",
+        "description": "List \"Balance\" resources",
+        "tags": [
+          "balance"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/include"
+          },
+          {
+            "$ref": "#/components/parameters/sort"
+          },
+          {
+            "$ref": "#/components/parameters/page-offset"
+          },
+          {
+            "$ref": "#/components/parameters/page-limit"
+          },
+          {
+            "name": "filter[id]",
+            "required": false,
+            "description": "Id filter",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[id]",
+            "required": false,
+            "description": "Id filter",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[balance]",
+            "required": false,
+            "description": "Equality filter for \"balance\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[balance$contains]",
+            "required": false,
+            "description": "String contains filter for \"balance\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[balance$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"balance\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[balance$search]",
+            "required": false,
+            "description": "String full-text search filter for \"balance\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[balance$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"balance\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[balance$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"balance\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[updateDate]",
+            "required": false,
+            "description": "Equality filter for \"updateDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updateDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"updateDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updateDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"updateDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updateDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"updateDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[updateDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"updateDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalanceListResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "create-Balance",
+        "description": "Create a \"Balance\" resource",
+        "tags": [
+          "balance"
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BalanceCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalanceResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/balance/{id}": {
+      "get": {
+        "operationId": "fetch-Balance",
+        "description": "Fetch a \"Balance\" resource",
+        "tags": [
+          "balance"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          },
+          {
+            "$ref": "#/components/parameters/include"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalanceResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "update-Balance-put",
+        "description": "Update a \"Balance\" resource",
+        "tags": [
+          "balance"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BalanceUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalanceResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "update-Balance-patch",
+        "description": "Update a \"Balance\" resource",
+        "tags": [
+          "balance"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BalanceUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BalanceResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "delete-Balance",
+        "description": "Delete a \"Balance\" resource",
+        "tags": [
+          "balance"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/listing": {
+      "get": {
+        "operationId": "list-Listing",
+        "description": "List \"Listing\" resources",
+        "tags": [
+          "listing"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/include"
+          },
+          {
+            "$ref": "#/components/parameters/sort"
+          },
+          {
+            "$ref": "#/components/parameters/page-offset"
+          },
+          {
+            "$ref": "#/components/parameters/page-limit"
+          },
+          {
+            "name": "filter[id]",
+            "required": false,
+            "description": "Id filter",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[creatorAddress]",
+            "required": false,
+            "description": "Equality filter for \"creatorAddress\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[creatorAddress$contains]",
+            "required": false,
+            "description": "String contains filter for \"creatorAddress\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[creatorAddress$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"creatorAddress\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[creatorAddress$search]",
+            "required": false,
+            "description": "String full-text search filter for \"creatorAddress\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[creatorAddress$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"creatorAddress\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[creatorAddress$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"creatorAddress\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[creationDate]",
+            "required": false,
+            "description": "Equality filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[creationDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[creationDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[creationDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[creationDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[ticker]",
+            "required": false,
+            "description": "Equality filter for \"ticker\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[ticker$contains]",
+            "required": false,
+            "description": "String contains filter for \"ticker\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[ticker$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"ticker\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[ticker$search]",
+            "required": false,
+            "description": "String full-text search filter for \"ticker\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[ticker$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"ticker\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[ticker$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"ticker\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[value]",
+            "required": false,
+            "description": "Equality filter for \"value\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[value$contains]",
+            "required": false,
+            "description": "String contains filter for \"value\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[value$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"value\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[value$search]",
+            "required": false,
+            "description": "String full-text search filter for \"value\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[value$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"value\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[value$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"value\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[stxValue]",
+            "required": false,
+            "description": "Equality filter for \"stxValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[stxValue$contains]",
+            "required": false,
+            "description": "String contains filter for \"stxValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[stxValue$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"stxValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[stxValue$search]",
+            "required": false,
+            "description": "String full-text search filter for \"stxValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[stxValue$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"stxValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[stxValue$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"stxValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[marketFeeValue]",
+            "required": false,
+            "description": "Equality filter for \"marketFeeValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[marketFeeValue$contains]",
+            "required": false,
+            "description": "String contains filter for \"marketFeeValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[marketFeeValue$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"marketFeeValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[marketFeeValue$search]",
+            "required": false,
+            "description": "String full-text search filter for \"marketFeeValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[marketFeeValue$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"marketFeeValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[marketFeeValue$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"marketFeeValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[gasFeeValueBuyer]",
+            "required": false,
+            "description": "Equality filter for \"gasFeeValueBuyer\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[gasFeeValueBuyer$contains]",
+            "required": false,
+            "description": "String contains filter for \"gasFeeValueBuyer\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[gasFeeValueBuyer$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"gasFeeValueBuyer\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[gasFeeValueBuyer$search]",
+            "required": false,
+            "description": "String full-text search filter for \"gasFeeValueBuyer\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[gasFeeValueBuyer$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"gasFeeValueBuyer\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[gasFeeValueBuyer$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"gasFeeValueBuyer\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[gasFeeValueSeller]",
+            "required": false,
+            "description": "Equality filter for \"gasFeeValueSeller\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[gasFeeValueSeller$contains]",
+            "required": false,
+            "description": "String contains filter for \"gasFeeValueSeller\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[gasFeeValueSeller$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"gasFeeValueSeller\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[gasFeeValueSeller$search]",
+            "required": false,
+            "description": "String full-text search filter for \"gasFeeValueSeller\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[gasFeeValueSeller$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"gasFeeValueSeller\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[gasFeeValueSeller$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"gasFeeValueSeller\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalStxValue]",
+            "required": false,
+            "description": "Equality filter for \"totalStxValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalStxValue$contains]",
+            "required": false,
+            "description": "String contains filter for \"totalStxValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalStxValue$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"totalStxValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalStxValue$search]",
+            "required": false,
+            "description": "String full-text search filter for \"totalStxValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalStxValue$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"totalStxValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalStxValue$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"totalStxValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[beneficiary]",
+            "required": false,
+            "description": "Equality filter for \"beneficiary\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[beneficiary$contains]",
+            "required": false,
+            "description": "String contains filter for \"beneficiary\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[beneficiary$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"beneficiary\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[beneficiary$search]",
+            "required": false,
+            "description": "String full-text search filter for \"beneficiary\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[beneficiary$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"beneficiary\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[beneficiary$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"beneficiary\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[requestStatus]",
+            "required": false,
+            "description": "Equality filter for \"requestStatus\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[requestStatus$contains]",
+            "required": false,
+            "description": "String contains filter for \"requestStatus\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[requestStatus$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"requestStatus\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[requestStatus$search]",
+            "required": false,
+            "description": "String full-text search filter for \"requestStatus\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[requestStatus$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"requestStatus\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[requestStatus$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"requestStatus\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[tokenReceiverMarketplaceAddress]",
+            "required": false,
+            "description": "Equality filter for \"tokenReceiverMarketplaceAddress\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[tokenReceiverMarketplaceAddress$contains]",
+            "required": false,
+            "description": "String contains filter for \"tokenReceiverMarketplaceAddress\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[tokenReceiverMarketplaceAddress$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"tokenReceiverMarketplaceAddress\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[tokenReceiverMarketplaceAddress$search]",
+            "required": false,
+            "description": "String full-text search filter for \"tokenReceiverMarketplaceAddress\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[tokenReceiverMarketplaceAddress$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"tokenReceiverMarketplaceAddress\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[tokenReceiverMarketplaceAddress$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"tokenReceiverMarketplaceAddress\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[stxSentConfirmed]",
+            "required": false,
+            "description": "Equality filter for \"stxSentConfirmed\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "filter[tokenSentConfirmed]",
+            "required": false,
+            "description": "Equality filter for \"tokenSentConfirmed\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "filter[priceRate]",
+            "required": false,
+            "description": "Equality filter for \"priceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[priceRate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"priceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[priceRate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"priceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[priceRate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"priceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[priceRate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"priceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[submitted]",
+            "required": false,
+            "description": "Equality filter for \"submitted\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "filter[pendingPurchaseTx]",
+            "required": false,
+            "description": "Equality filter for \"pendingPurchaseTx\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "filter[pendingPurchaseTx$has]",
+            "required": false,
+            "description": "Collection contains filter for \"pendingPurchaseTx\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[pendingPurchaseTx$hasEvery]",
+            "required": false,
+            "description": "Collection contains-all filter for \"pendingPurchaseTx\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "filter[pendingPurchaseTx$hasSome]",
+            "required": false,
+            "description": "Collection contains-any filter for \"pendingPurchaseTx\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "filter[pendingPurchaseTx$isEmpty]",
+            "required": false,
+            "description": "Collection is empty filter for \"pendingPurchaseTx\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "filter[v]",
+            "required": false,
+            "description": "Equality filter for \"v\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[v$lt]",
+            "required": false,
+            "description": "Less-than filter for \"v\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[v$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"v\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[v$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"v\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[v$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"v\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[creationTxId]",
+            "required": false,
+            "description": "Equality filter for \"creationTxId\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[creationTxId$contains]",
+            "required": false,
+            "description": "String contains filter for \"creationTxId\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[creationTxId$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"creationTxId\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[creationTxId$search]",
+            "required": false,
+            "description": "String full-text search filter for \"creationTxId\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[creationTxId$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"creationTxId\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[creationTxId$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"creationTxId\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[lastReincarnate]",
+            "required": false,
+            "description": "Equality filter for \"lastReincarnate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[lastReincarnate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"lastReincarnate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[lastReincarnate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"lastReincarnate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[lastReincarnate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"lastReincarnate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[lastReincarnate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"lastReincarnate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[isBuried]",
+            "required": false,
+            "description": "Equality filter for \"isBuried\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingListResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "create-Listing",
+        "description": "Create a \"Listing\" resource",
+        "tags": [
+          "listing"
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListingCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/listing/{id}": {
+      "get": {
+        "operationId": "fetch-Listing",
+        "description": "Fetch a \"Listing\" resource",
+        "tags": [
+          "listing"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          },
+          {
+            "$ref": "#/components/parameters/include"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "update-Listing-put",
+        "description": "Update a \"Listing\" resource",
+        "tags": [
+          "listing"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListingUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "update-Listing-patch",
+        "description": "Update a \"Listing\" resource",
+        "tags": [
+          "listing"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ListingUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "delete-Listing",
+        "description": "Delete a \"Listing\" resource",
+        "tags": [
+          "listing"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/priceData": {
+      "get": {
+        "operationId": "list-PriceData",
+        "description": "List \"PriceData\" resources",
+        "tags": [
+          "priceData"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/include"
+          },
+          {
+            "$ref": "#/components/parameters/sort"
+          },
+          {
+            "$ref": "#/components/parameters/page-offset"
+          },
+          {
+            "$ref": "#/components/parameters/page-limit"
+          },
+          {
+            "name": "filter[id]",
+            "required": false,
+            "description": "Id filter",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[minPriceRate]",
+            "required": false,
+            "description": "Equality filter for \"minPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[minPriceRate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"minPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[minPriceRate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"minPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[minPriceRate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"minPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[minPriceRate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"minPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[maxPriceRate]",
+            "required": false,
+            "description": "Equality filter for \"maxPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[maxPriceRate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"maxPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[maxPriceRate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"maxPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[maxPriceRate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"maxPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[maxPriceRate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"maxPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[medianPriceRate]",
+            "required": false,
+            "description": "Equality filter for \"medianPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[medianPriceRate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"medianPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[medianPriceRate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"medianPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[medianPriceRate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"medianPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[medianPriceRate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"medianPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[meanPriceRate]",
+            "required": false,
+            "description": "Equality filter for \"meanPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[meanPriceRate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"meanPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[meanPriceRate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"meanPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[meanPriceRate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"meanPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[meanPriceRate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"meanPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[medianMinPriceRate]",
+            "required": false,
+            "description": "Equality filter for \"medianMinPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[medianMinPriceRate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"medianMinPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[medianMinPriceRate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"medianMinPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[medianMinPriceRate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"medianMinPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[medianMinPriceRate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"medianMinPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[medianMaxPriceRate]",
+            "required": false,
+            "description": "Equality filter for \"medianMaxPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[medianMaxPriceRate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"medianMaxPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[medianMaxPriceRate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"medianMaxPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[medianMaxPriceRate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"medianMaxPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[medianMaxPriceRate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"medianMaxPriceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PriceDataListResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "create-PriceData",
+        "description": "Create a \"PriceData\" resource",
+        "tags": [
+          "priceData"
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PriceDataCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PriceDataResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/priceData/{id}": {
+      "get": {
+        "operationId": "fetch-PriceData",
+        "description": "Fetch a \"PriceData\" resource",
+        "tags": [
+          "priceData"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          },
+          {
+            "$ref": "#/components/parameters/include"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PriceDataResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "update-PriceData-put",
+        "description": "Update a \"PriceData\" resource",
+        "tags": [
+          "priceData"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PriceDataUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PriceDataResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "update-PriceData-patch",
+        "description": "Update a \"PriceData\" resource",
+        "tags": [
+          "priceData"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PriceDataUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PriceDataResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "delete-PriceData",
+        "description": "Delete a \"PriceData\" resource",
+        "tags": [
+          "priceData"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "_jsonapi": {
+        "type": "object",
+        "description": "An object describing the server’s implementation",
+        "required": [
+          "version"
+        ],
+        "properties": {
+          "version": {
+            "type": "string"
+          }
+        }
+      },
+      "_meta": {
+        "type": "object",
+        "description": "Meta information about the request or response",
+        "properties": {
+          "serialization": {
+            "description": "Superjson serialization metadata"
+          }
+        },
+        "additionalProperties": true
+      },
+      "_resourceIdentifier": {
+        "type": "object",
+        "description": "Identifier for a resource",
+        "required": [
+          "type",
+          "id"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Resource type"
+          },
+          "id": {
+            "type": "string",
+            "description": "Resource id"
+          }
+        }
+      },
+      "_resource": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/_resourceIdentifier"
+          },
+          {
+            "type": "object",
+            "description": "A resource with attributes and relationships",
+            "properties": {
+              "attributes": {
+                "type": "object",
+                "description": "Resource attributes"
+              },
+              "relationships": {
+                "type": "object",
+                "description": "Resource relationships"
+              }
+            }
+          }
+        ]
+      },
+      "_links": {
+        "type": "object",
+        "required": [
+          "self"
+        ],
+        "description": "Links related to the resource",
+        "properties": {
+          "self": {
+            "type": "string",
+            "description": "Link for refetching the curent results"
+          }
+        }
+      },
+      "_pagination": {
+        "type": "object",
+        "description": "Pagination information",
+        "required": [
+          "first",
+          "last",
+          "prev",
+          "next"
+        ],
+        "properties": {
+          "first": {
+            "type": "string",
+            "description": "Link to the first page",
+            "nullable": true
+          },
+          "last": {
+            "type": "string",
+            "description": "Link to the last page",
+            "nullable": true
+          },
+          "prev": {
+            "type": "string",
+            "description": "Link to the previous page",
+            "nullable": true
+          },
+          "next": {
+            "type": "string",
+            "description": "Link to the next page",
+            "nullable": true
+          }
+        }
+      },
+      "_errors": {
+        "type": "array",
+        "description": "An array of error objects",
+        "items": {
+          "type": "object",
+          "required": [
+            "status",
+            "code"
+          ],
+          "properties": {
+            "status": {
+              "type": "string",
+              "description": "HTTP status"
+            },
+            "code": {
+              "type": "string",
+              "description": "Error code"
+            },
+            "prismaCode": {
+              "type": "string",
+              "description": "Prisma error code if the error is thrown by Prisma"
+            },
+            "title": {
+              "type": "string",
+              "description": "Error title"
+            },
+            "detail": {
+              "type": "string",
+              "description": "Error detail"
+            },
+            "reason": {
+              "type": "string",
+              "description": "Detailed error reason"
+            },
+            "zodErrors": {
+              "type": "object",
+              "additionalProperties": true,
+              "description": "Zod validation errors if the error is due to data validation failure"
+            }
+          }
+        }
+      },
+      "_errorResponse": {
+        "type": "object",
+        "required": [
+          "errors"
+        ],
+        "description": "An error response",
+        "properties": {
+          "jsonapi": {
+            "$ref": "#/components/schemas/_jsonapi"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/_errors"
+          }
+        }
+      },
+      "Token": {
+        "type": "object",
+        "description": "The \"Token\" model",
+        "required": [
+          "id",
+          "type",
+          "attributes"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "totalSupply": {
+                "type": "string"
+              },
+              "mintLimit": {
+                "type": "string"
+              },
+              "creationDate": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "supplyLeftToMint": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "TokenCreateRequest": {
+        "type": "object",
+        "description": "Input for creating a \"Token\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "The \"Token\" model",
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "object",
+                "required": [
+                  "totalSupply",
+                  "mintLimit",
+                  "creationDate",
+                  "supplyLeftToMint"
+                ],
+                "properties": {
+                  "totalSupply": {
+                    "type": "string"
+                  },
+                  "mintLimit": {
+                    "type": "string"
+                  },
+                  "creationDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "supplyLeftToMint": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          }
+        }
+      },
+      "TokenUpdateRequest": {
+        "type": "object",
+        "description": "Input for updating a \"Token\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "The \"Token\" model",
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "totalSupply": {
+                    "type": "string"
+                  },
+                  "mintLimit": {
+                    "type": "string"
+                  },
+                  "creationDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "supplyLeftToMint": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          }
+        }
+      },
+      "TokenResponse": {
+        "type": "object",
+        "description": "Response for a \"Token\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "jsonapi": {
+            "$ref": "#/components/schemas/_jsonapi"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Token"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            ]
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resource"
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/_links"
+          }
+        }
+      },
+      "TokenListResponse": {
+        "type": "object",
+        "description": "Response for a list of \"Token\"",
+        "required": [
+          "data",
+          "links"
+        ],
+        "properties": {
+          "jsonapi": {
+            "$ref": "#/components/schemas/_jsonapi"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Token"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resource"
+            }
+          },
+          "links": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/_links"
+              },
+              {
+                "$ref": "#/components/schemas/_pagination"
+              }
+            ]
+          }
+        }
+      },
+      "Balance": {
+        "type": "object",
+        "description": "The \"Balance\" model",
+        "required": [
+          "id",
+          "type",
+          "attributes"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "balance": {
+                "type": "string"
+              },
+              "updateDate": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        }
+      },
+      "BalanceCreateRequest": {
+        "type": "object",
+        "description": "Input for creating a \"Balance\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "The \"Balance\" model",
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "object",
+                "required": [
+                  "balance",
+                  "updateDate"
+                ],
+                "properties": {
+                  "balance": {
+                    "type": "string"
+                  },
+                  "updateDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              }
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          }
+        }
+      },
+      "BalanceUpdateRequest": {
+        "type": "object",
+        "description": "Input for updating a \"Balance\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "The \"Balance\" model",
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "balance": {
+                    "type": "string"
+                  },
+                  "updateDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                }
+              }
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          }
+        }
+      },
+      "BalanceResponse": {
+        "type": "object",
+        "description": "Response for a \"Balance\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "jsonapi": {
+            "$ref": "#/components/schemas/_jsonapi"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Balance"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            ]
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resource"
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/_links"
+          }
+        }
+      },
+      "BalanceListResponse": {
+        "type": "object",
+        "description": "Response for a list of \"Balance\"",
+        "required": [
+          "data",
+          "links"
+        ],
+        "properties": {
+          "jsonapi": {
+            "$ref": "#/components/schemas/_jsonapi"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Balance"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resource"
+            }
+          },
+          "links": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/_links"
+              },
+              {
+                "$ref": "#/components/schemas/_pagination"
+              }
+            ]
+          }
+        }
+      },
+      "Listing": {
+        "type": "object",
+        "description": "The \"Listing\" model",
+        "required": [
+          "id",
+          "type",
+          "attributes"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "creatorAddress": {
+                "type": "string"
+              },
+              "creationDate": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "ticker": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              },
+              "stxValue": {
+                "type": "string"
+              },
+              "marketFeeValue": {
+                "type": "string"
+              },
+              "gasFeeValueBuyer": {
+                "type": "string"
+              },
+              "gasFeeValueSeller": {
+                "type": "string"
+              },
+              "totalStxValue": {
+                "type": "string"
+              },
+              "beneficiary": {
+                "type": "string"
+              },
+              "requestStatus": {
+                "type": "string"
+              },
+              "tokenReceiverMarketplaceAddress": {
+                "type": "string"
+              },
+              "stxSentConfirmed": {
+                "type": "boolean"
+              },
+              "tokenSentConfirmed": {
+                "type": "boolean"
+              },
+              "priceRate": {
+                "type": "number"
+              },
+              "submitted": {
+                "type": "boolean"
+              },
+              "pendingPurchaseTx": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "v": {
+                "type": "integer"
+              },
+              "creationTxId": {
+                "type": "string"
+              },
+              "lastReincarnate": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "isBuried": {
+                "type": "boolean",
+                "nullable": true
+              }
+            }
+          }
+        }
+      },
+      "ListingCreateRequest": {
+        "type": "object",
+        "description": "Input for creating a \"Listing\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "The \"Listing\" model",
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "object",
+                "required": [
+                  "creatorAddress",
+                  "creationDate",
+                  "ticker",
+                  "value",
+                  "stxValue",
+                  "marketFeeValue",
+                  "gasFeeValueBuyer",
+                  "gasFeeValueSeller",
+                  "totalStxValue",
+                  "beneficiary",
+                  "requestStatus",
+                  "tokenReceiverMarketplaceAddress",
+                  "stxSentConfirmed",
+                  "tokenSentConfirmed",
+                  "priceRate",
+                  "submitted",
+                  "pendingPurchaseTx",
+                  "v",
+                  "creationTxId"
+                ],
+                "properties": {
+                  "creatorAddress": {
+                    "type": "string"
+                  },
+                  "creationDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "ticker": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "stxValue": {
+                    "type": "string"
+                  },
+                  "marketFeeValue": {
+                    "type": "string"
+                  },
+                  "gasFeeValueBuyer": {
+                    "type": "string"
+                  },
+                  "gasFeeValueSeller": {
+                    "type": "string"
+                  },
+                  "totalStxValue": {
+                    "type": "string"
+                  },
+                  "beneficiary": {
+                    "type": "string"
+                  },
+                  "requestStatus": {
+                    "type": "string"
+                  },
+                  "tokenReceiverMarketplaceAddress": {
+                    "type": "string"
+                  },
+                  "stxSentConfirmed": {
+                    "type": "boolean"
+                  },
+                  "tokenSentConfirmed": {
+                    "type": "boolean"
+                  },
+                  "priceRate": {
+                    "type": "number"
+                  },
+                  "submitted": {
+                    "type": "boolean"
+                  },
+                  "pendingPurchaseTx": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "v": {
+                    "type": "integer"
+                  },
+                  "creationTxId": {
+                    "type": "string"
+                  },
+                  "lastReincarnate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "isBuried": {
+                    "type": "boolean",
+                    "nullable": true
+                  }
+                }
+              }
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          }
+        }
+      },
+      "ListingUpdateRequest": {
+        "type": "object",
+        "description": "Input for updating a \"Listing\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "The \"Listing\" model",
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "creatorAddress": {
+                    "type": "string"
+                  },
+                  "creationDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "ticker": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "stxValue": {
+                    "type": "string"
+                  },
+                  "marketFeeValue": {
+                    "type": "string"
+                  },
+                  "gasFeeValueBuyer": {
+                    "type": "string"
+                  },
+                  "gasFeeValueSeller": {
+                    "type": "string"
+                  },
+                  "totalStxValue": {
+                    "type": "string"
+                  },
+                  "beneficiary": {
+                    "type": "string"
+                  },
+                  "requestStatus": {
+                    "type": "string"
+                  },
+                  "tokenReceiverMarketplaceAddress": {
+                    "type": "string"
+                  },
+                  "stxSentConfirmed": {
+                    "type": "boolean"
+                  },
+                  "tokenSentConfirmed": {
+                    "type": "boolean"
+                  },
+                  "priceRate": {
+                    "type": "number"
+                  },
+                  "submitted": {
+                    "type": "boolean"
+                  },
+                  "pendingPurchaseTx": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "v": {
+                    "type": "integer"
+                  },
+                  "creationTxId": {
+                    "type": "string"
+                  },
+                  "lastReincarnate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "isBuried": {
+                    "type": "boolean",
+                    "nullable": true
+                  }
+                }
+              }
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          }
+        }
+      },
+      "ListingResponse": {
+        "type": "object",
+        "description": "Response for a \"Listing\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "jsonapi": {
+            "$ref": "#/components/schemas/_jsonapi"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Listing"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            ]
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resource"
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/_links"
+          }
+        }
+      },
+      "ListingListResponse": {
+        "type": "object",
+        "description": "Response for a list of \"Listing\"",
+        "required": [
+          "data",
+          "links"
+        ],
+        "properties": {
+          "jsonapi": {
+            "$ref": "#/components/schemas/_jsonapi"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Listing"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resource"
+            }
+          },
+          "links": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/_links"
+              },
+              {
+                "$ref": "#/components/schemas/_pagination"
+              }
+            ]
+          }
+        }
+      },
+      "PriceData": {
+        "type": "object",
+        "description": "The \"PriceData\" model",
+        "required": [
+          "id",
+          "type",
+          "attributes"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "minPriceRate": {
+                "type": "number"
+              },
+              "maxPriceRate": {
+                "type": "number"
+              },
+              "medianPriceRate": {
+                "type": "number"
+              },
+              "meanPriceRate": {
+                "type": "number"
+              },
+              "medianMinPriceRate": {
+                "type": "number"
+              },
+              "medianMaxPriceRate": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      },
+      "PriceDataCreateRequest": {
+        "type": "object",
+        "description": "Input for creating a \"PriceData\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "The \"PriceData\" model",
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "object",
+                "required": [
+                  "minPriceRate",
+                  "maxPriceRate",
+                  "medianPriceRate",
+                  "meanPriceRate",
+                  "medianMinPriceRate",
+                  "medianMaxPriceRate"
+                ],
+                "properties": {
+                  "minPriceRate": {
+                    "type": "number"
+                  },
+                  "maxPriceRate": {
+                    "type": "number"
+                  },
+                  "medianPriceRate": {
+                    "type": "number"
+                  },
+                  "meanPriceRate": {
+                    "type": "number"
+                  },
+                  "medianMinPriceRate": {
+                    "type": "number"
+                  },
+                  "medianMaxPriceRate": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          }
+        }
+      },
+      "PriceDataUpdateRequest": {
+        "type": "object",
+        "description": "Input for updating a \"PriceData\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "The \"PriceData\" model",
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "minPriceRate": {
+                    "type": "number"
+                  },
+                  "maxPriceRate": {
+                    "type": "number"
+                  },
+                  "medianPriceRate": {
+                    "type": "number"
+                  },
+                  "meanPriceRate": {
+                    "type": "number"
+                  },
+                  "medianMinPriceRate": {
+                    "type": "number"
+                  },
+                  "medianMaxPriceRate": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          }
+        }
+      },
+      "PriceDataResponse": {
+        "type": "object",
+        "description": "Response for a \"PriceData\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "jsonapi": {
+            "$ref": "#/components/schemas/_jsonapi"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/PriceData"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            ]
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resource"
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/_links"
+          }
+        }
+      },
+      "PriceDataListResponse": {
+        "type": "object",
+        "description": "Response for a list of \"PriceData\"",
+        "required": [
+          "data",
+          "links"
+        ],
+        "properties": {
+          "jsonapi": {
+            "$ref": "#/components/schemas/_jsonapi"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/PriceData"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resource"
+            }
+          },
+          "links": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/_links"
+              },
+              {
+                "$ref": "#/components/schemas/_pagination"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "parameters": {
+      "id": {
+        "name": "id",
+        "in": "path",
+        "description": "The resource id",
+        "required": true,
+        "schema": {
+          "type": "string"
+        }
+      },
+      "include": {
+        "name": "include",
+        "in": "query",
+        "description": "Relationships to include",
+        "required": false,
+        "style": "form",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "sort": {
+        "name": "sort",
+        "in": "query",
+        "description": "Fields to sort by",
+        "required": false,
+        "style": "form",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "page-offset": {
+        "name": "page[offset]",
+        "in": "query",
+        "description": "Offset for pagination",
+        "required": false,
+        "style": "form",
+        "schema": {
+          "type": "integer"
+        }
+      },
+      "page-limit": {
+        "name": "page[limit]",
+        "in": "query",
+        "description": "Limit for pagination",
+        "required": false,
+        "style": "form",
+        "schema": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

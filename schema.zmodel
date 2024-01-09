@@ -1,0 +1,74 @@
+datasource db {
+    provider = 'postgresql'
+    url = env("POSTGRES_PRISMA_URL")
+    directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+// Token from api.stx20.com
+model Token {
+    ticker String @id
+    totalSupply String
+    mintLimit String
+    creationDate DateTime
+    supplyLeftToMint String
+}
+
+model Balance {
+    @@id([address, ticker])
+    address String
+    ticker String
+    balance String
+    updateDate DateTime
+}
+
+// Listing from api.stx20.com
+model Listing {
+    id String @id
+    creatorAddress String
+    creationDate DateTime
+    ticker String
+    value String
+    stxValue String
+    marketFeeValue String
+    gasFeeValueBuyer String
+    gasFeeValueSeller String
+    totalStxValue String
+    beneficiary String
+    requestStatus String
+    tokenReceiverMarketplaceAddress String
+    stxSentConfirmed Boolean
+    tokenSentConfirmed Boolean
+    priceRate Float
+    submitted Boolean
+    pendingPurchaseTx String[]
+    v Int
+    creationTxId String
+    lastReincarnate DateTime?
+    isBuried Boolean?
+}
+
+model PriceData {
+    ticker String @id
+    minPriceRate Float
+    maxPriceRate Float
+    medianPriceRate Float
+    meanPriceRate Float
+    medianMinPriceRate Float
+    medianMaxPriceRate Float
+}
+
+
+plugin openapi {
+    provider = '@zenstackhq/openapi'
+    prefix = '/api'
+    flavor = 'rest'
+    title = 'STX20 API'
+    specVersion = '3.0.0'
+    version = '0.1.0'
+    description = 'Aggregated STX20 Data'
+    output = 'stx20-api.json'
+}
