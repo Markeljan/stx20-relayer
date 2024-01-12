@@ -5,51 +5,50 @@ const prisma = new PrismaClient();
 
 export const updateTokens = async () => {
   const { data: tokens } = await stx20Api.fetchAllTokens();
-  const newTokenMap = new Map(tokens.map((token) => [token.ticker, token]));
-  const existingTokens = await fetchExistingTokens(Array.from(newTokenMap.keys()));
-
-  const newTokens: Prisma.IndexerTokenCreateInput[] = [];
-  const updateTokenPromises: Promise<Prisma.IndexerTokenCreateInput>[] = [];
-
-  existingTokens.forEach((existingToken) => {
-    const newToken = newTokenMap.get(existingToken.ticker);
-    if (newToken && needsUpdate(existingToken, newToken)) {
-      updateTokenPromises.push(
-        prisma.indexerToken.update({
-          where: { ticker: existingToken.ticker },
-          data: newToken,
-        })
-      );
-    }
-    newTokenMap.delete(existingToken.ticker);
-  });
-
-  newTokens.push(...newTokenMap.values());
-
-  const [createdTokens, updatedTokens] = await prisma.$transaction(async (tx) => [
-    await prisma.indexerToken.createMany({
-      data: newTokens,
-      skipDuplicates: true,
-    }),
-    await Promise.all(updateTokenPromises),
-  ]);
-
   console.log(`Fetched ${tokens.length} tokens.`);
-  console.log(`Created ${createdTokens.count} new tokens.`);
-  console.log(`Updated ${updatedTokens.length} existing tokens.`);
-};
 
-// HELPERS
-const fetchExistingTokens = (tickers: string[]) => {
-  return prisma.indexerToken.findMany({
-    where: {
-      ticker: {
-        in: tickers,
+  // prepare tokens for upsert
+  const tokensToUpsert: Prisma.TokenUpsertArgs[] = [];
+
+  // we only need to update tokens that are new or have a different supplyLeftToMint
+  // first, get all tokens from the db
+  const dbTokens = await prisma.token.findMany();
+  // then, filter out tokens that are already in the db with the same supplyLeftToMint
+  const tokensToUpdate = tokens.filter(
+    (t) => !dbTokens.find((dbToken) => dbToken.ticker === t.ticker && dbToken.supplyLeftToMint === t.supplyLeftToMint)
+  );
+  // then, add them to the upsert array
+  tokensToUpdate.forEach((token) => {
+    tokensToUpsert.push({
+      where: {
+        ticker: token.ticker,
       },
-    },
+      create: {
+        ticker: token.ticker,
+        totalSupply: token.totalSupply,
+        mintLimit: token.mintLimit,
+        creationDate: token.creationDate,
+        supplyLeftToMint: token.supplyLeftToMint,
+      },
+      update: {
+        supplyLeftToMint: token.supplyLeftToMint,
+      },
+    });
   });
-};
 
-const needsUpdate = (existingToken: Prisma.IndexerTokenCreateInput, newToken: Prisma.IndexerTokenCreateInput) => {
-  return existingToken.supplyLeftToMint !== newToken.supplyLeftToMint;
+  if (tokensToUpsert.length === 0) {
+    console.log("No tokens need updates.");
+    return tokens;
+  }
+
+  try {
+    // Execute all upsert operations concurrently
+    console.log(`Updating ${tokensToUpsert.length} tokens...`);
+    const result = await prisma.$transaction(tokensToUpsert.map((t) => prisma.token.upsert(t)));
+    console.log(`Updated ${result.length} tokens successfully.`);
+    return tokens;
+  } catch (error) {
+    console.error(`Failed to update tokens:`, error);
+    throw error;
+  }
 };

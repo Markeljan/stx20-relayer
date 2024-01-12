@@ -2,57 +2,49 @@ import { Prisma, PrismaClient } from "@prisma/client";
 import { stx20Api } from "./config";
 const prisma = new PrismaClient();
 
-export const updateBalances = async (_transactions?: Prisma.TransactionCreateInput[]) => {
-  // get unique addresses from transaction table
+export const updateBalances = async () => {
+  // get unique addresses TBD where to get them from
   const uniqueAddresses = new Set<string>();
 
-  const transactions =
-    _transactions ??
-    (await prisma.transaction.findMany({
-      select: {
-        sender: true,
-        recipient: true,
-      },
-    }));
+  // fetch balances form api
+  const { data: balances } = await stx20Api.fetchManyBalances(Array.from(uniqueAddresses));
 
-  transactions.forEach((t) => {
-    if (t.sender) uniqueAddresses.add(t.sender);
-    if (t.recipient) uniqueAddresses.add(t.recipient);
-  });
-
-  const addresses = Array.from(uniqueAddresses);
-
-  // fetch balances from indexer
-  const { data: balances } = await stx20Api.fetchManyBalances(addresses);
-
-  // upsert balance updates / inserts
+  // prepare balances for upsert
   const balancesToUpsert: Prisma.BalanceUpsertArgs[] = [];
 
   balances.forEach((balance) => {
     balance.balances.forEach((b) => {
       balancesToUpsert.push({
         where: {
-          ticker_address: {
-            ticker: b.ticker,
+          address_ticker: {
             address: balance.address,
+            ticker: b.ticker,
           },
         },
         create: {
           address: balance.address,
           ticker: b.ticker,
-          balance: string,
+          balance: b.balance,
+          updateDate: b.updateDate,
         },
         update: {
           balance: b.balance,
+          updateDate: b.updateDate,
         },
       });
     });
   });
 
+  if (balancesToUpsert.length === 0) {
+    console.log("No balances need updates.");
+    return balances;
+  }
+
   try {
     // Execute all upsert operations concurrently
     const result = await prisma.$transaction(balancesToUpsert.map((b) => prisma.balance.upsert(b)));
     console.log("Balances updated:", result);
+    return balances;
   } catch (error) {
     console.error("An error occurred while updating balances:", error);
     throw error;

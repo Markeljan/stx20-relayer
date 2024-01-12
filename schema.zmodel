@@ -8,13 +8,14 @@ generator client {
     provider = "prisma-client-js"
 }
 
-// Token from api.stx20.com
 model Token {
     ticker String @id
     totalSupply String
     mintLimit String
     creationDate DateTime
     supplyLeftToMint String
+    priceData PriceData?
+    listings Listing[]
 }
 
 model Balance {
@@ -28,6 +29,7 @@ model Balance {
 // Listing from api.stx20.com
 model Listing {
     id String @id
+    token Token @relation(fields: [ticker], references: [ticker])
     creatorAddress String
     creationDate DateTime
     ticker String
@@ -53,7 +55,9 @@ model Listing {
 
 model PriceData {
     ticker String @id
+    token Token @relation(fields: [ticker], references: [ticker])
     minPriceRate Float
+    prevMinPriceRate Float
     maxPriceRate Float
     medianPriceRate Float
     meanPriceRate Float

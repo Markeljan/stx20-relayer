@@ -16,12 +16,11 @@ type TokenDetailsApiResponse =
 type Balance = {
   ticker: string;
   balance: string;
-  updateDate?: string;
+  updateDate: string;
 };
 type BalanceApiResponse = {
   address: string;
   balances: Balance[];
-  updateDate?: string;
 };
 
 type ManyBalancesApiResponse = {
@@ -41,7 +40,6 @@ class Stx20Api {
       const page = tokens.length / 200;
       const { data: tokensResponse, total } = await this.fetchManyTokens(page);
       tokens.push(...tokensResponse);
-      console.log(`Fetched ${tokens.length} / ${total} tokens.`);
       if (tokens.length >= total) break;
     }
     return { page: 1, limit: 10000, total: tokens.length, data: tokens };
