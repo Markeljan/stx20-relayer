@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import * as fs from "fs";
 import path from "path";
 
-import { PrismaClient } from "@prisma/client/edge";
+import * as Prisma from "@prisma/client";
 import RestApiHandler from "@zenstackhq/server/api/rest";
 import { ZenStackMiddleware } from "@zenstackhq/server/express";
 import cors from "cors";
@@ -16,7 +16,7 @@ const app = express();
 app.use(express.json({ limit: "2mb" }));
 app.use(cors());
 
-const prisma = new PrismaClient();
+const prisma = new Prisma.PrismaClient();
 
 const apiHandler = RestApiHandler({ endpoint: "http://stx20-api.com/api" });
 
