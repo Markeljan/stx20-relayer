@@ -5,10 +5,9 @@ import path from "path";
 import { PrismaClient } from "@prisma/client";
 import makeHandler from "@zenstackhq/server/api/rest";
 
-import ZenStackMiddlewarePkg from "@zenstackhq/server/express";
 import cors from "cors";
 import swaggerUI from "swagger-ui-express";
-const { ZenStackMiddleware } = ZenStackMiddlewarePkg;
+const { ZenStackMiddleware } = require("@zenstackhq/server/express");
 
 //////////////////////////////////////////////
 /////////////// CONFIG ///////////////////////
