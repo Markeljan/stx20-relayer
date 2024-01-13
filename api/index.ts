@@ -53,14 +53,14 @@ const removeNulls = (obj: any) => {
 /////////////// API //////////////////////////
 //////////////////////////////////////////////
 
-app.get("/", (req, res) => {
+app.get("/", (req: any, res: any) => {
   res.send("Welcome to the STX20 API. Visit /api/docs for documentation");
 });
 
 app.get(
   "/api/marketplace",
   // create a custom express.Handler to handle the request
-  (req: Request, res: Response) => {
+  (req: any, res: any) => {
     // do something with the request
     res.send("Hello from /api/marketplace");
   }
