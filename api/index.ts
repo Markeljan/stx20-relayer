@@ -4,10 +4,9 @@ import path from "path";
 
 import { PrismaClient } from "@prisma/client";
 import RestApiHandler from "@zenstackhq/server/api/rest";
-import pkg from "@zenstackhq/server/express";
+import { ZenStackMiddleware } from "@zenstackhq/server/express";
 import cors from "cors";
 import swaggerUI from "swagger-ui-express";
-const { ZenStackMiddleware } = pkg;
 
 //////////////////////////////////////////////
 /////////////// CONFIG ///////////////////////
