@@ -1,4 +1,4 @@
-import { Listing } from "@prisma/client";
+import { Listing } from "@prisma/client/edge";
 
 type MarketplaceListing = Omit<Listing, "id, v"> & { _id: string; __v: number };
 

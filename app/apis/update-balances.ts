@@ -1,4 +1,4 @@
-import { Prisma, PrismaClient } from "@prisma/client";
+import { Prisma, PrismaClient } from "@prisma/client/edge";
 import { stx20Api } from "./api-stx20";
 const prisma = new PrismaClient();
 

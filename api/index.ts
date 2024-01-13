@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import * as fs from "fs";
 import path from "path";
 
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client/edge";
 import RestApiHandler from "@zenstackhq/server/api/rest";
 import { ZenStackMiddleware } from "@zenstackhq/server/express";
 import cors from "cors";

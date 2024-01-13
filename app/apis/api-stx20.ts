@@ -1,4 +1,4 @@
-import { Token } from "@prisma/client";
+import { Token } from "@prisma/client/edge";
 
 type TokensApiResponse = {
   page: number;

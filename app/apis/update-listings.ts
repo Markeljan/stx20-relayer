@@ -1,4 +1,4 @@
-import { Prisma, PrismaClient } from "@prisma/client";
+import { Prisma, PrismaClient } from "@prisma/client/edge";
 import { stx20MarketplaceApi } from "./api-stx20-marketplace";
 
 const prisma = new PrismaClient();
