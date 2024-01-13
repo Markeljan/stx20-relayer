@@ -72,8 +72,6 @@ app.get(
 /////////////// Generated ////////////////////
 //////////////////////////////////////////////
 
-const __dirname = path.resolve();
-
 // Vercel can't properly serve the Swagger UI CSS from its npm package, here we
 // load it from a public location
 const options = { customCssUrl: "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.3/swagger-ui.css" };
