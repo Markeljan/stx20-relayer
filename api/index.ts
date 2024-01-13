@@ -3,7 +3,7 @@ import * as fs from "fs";
 import path from "path";
 
 import { PrismaClient } from "@prisma/client";
-import RestApiHandler from "@zenstackhq/server/api/rest";
+import makeHandler from "@zenstackhq/server/api/rest";
 
 import ZenStackMiddlewarePkg from "@zenstackhq/server/express";
 import cors from "cors";
@@ -20,7 +20,7 @@ app.use(cors());
 
 const prisma = new PrismaClient();
 
-const apiHandler = RestApiHandler({ endpoint: "http://stx20-api.com/api" });
+const apiHandler = makeHandler({ endpoint: "http://stx20-api.com/api" });
 
 const wrappedApiHandler = async (req: any) => {
   try {
