@@ -1,7 +1,7 @@
 {
   "name": "bun-stx20-api",
   "main": "/api/index.ts",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "bun api/index.ts",
     "postinstall": "zenstack generate && prisma db push"
