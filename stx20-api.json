@@ -19,6 +19,10 @@
       "description": "Listing operations"
     },
     {
+      "name": "historicalPrice",
+      "description": "HistoricalPrice operations"
+    },
+    {
       "name": "priceData",
       "description": "PriceData operations"
     }
@@ -312,6 +316,31 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "filter[priceData]",
+            "required": false,
+            "description": "Equality filter for \"priceData\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[listings]",
+            "required": false,
+            "description": "Equality filter for \"listings\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
           }
         ],
         "responses": {
@@ -544,6 +573,1067 @@
         "responses": {
           "200": {
             "description": "Successful operation"
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/token/{id}/priceData": {
+      "get": {
+        "operationId": "fetch-Token-related-priceData",
+        "description": "Fetch the related \"priceData\" resource for \"Token\"",
+        "tags": [
+          "token"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          },
+          {
+            "$ref": "#/components/parameters/include"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PriceDataResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/token/{id}/relationships/priceData": {
+      "get": {
+        "operationId": "fetch-Token-relationship-priceData",
+        "description": "Fetch the \"priceData\" relationships for a \"Token\"",
+        "tags": [
+          "token"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toOneRelationshipResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "update-Token-relationship-priceData-put",
+        "description": "Update \"priceData\" relationship for a \"Token\"",
+        "tags": [
+          "token"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/_toOneRelationshipRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toOneRelationshipResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "update-Token-relationship-priceData-patch",
+        "description": "Update \"priceData\" relationship for a \"Token\"",
+        "tags": [
+          "token"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/_toOneRelationshipRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toOneRelationshipResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/token/{id}/listings": {
+      "get": {
+        "operationId": "fetch-Token-related-listings",
+        "description": "Fetch the related \"listings\" resource for \"Token\"",
+        "tags": [
+          "token"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          },
+          {
+            "$ref": "#/components/parameters/include"
+          },
+          {
+            "$ref": "#/components/parameters/sort"
+          },
+          {
+            "$ref": "#/components/parameters/page-offset"
+          },
+          {
+            "$ref": "#/components/parameters/page-limit"
+          },
+          {
+            "name": "filter[id]",
+            "required": false,
+            "description": "Id filter",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply]",
+            "required": false,
+            "description": "Equality filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply$contains]",
+            "required": false,
+            "description": "String contains filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply$search]",
+            "required": false,
+            "description": "String full-text search filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit]",
+            "required": false,
+            "description": "Equality filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit$contains]",
+            "required": false,
+            "description": "String contains filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit$search]",
+            "required": false,
+            "description": "String full-text search filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[creationDate]",
+            "required": false,
+            "description": "Equality filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[creationDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[creationDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[creationDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[creationDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint]",
+            "required": false,
+            "description": "Equality filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint$contains]",
+            "required": false,
+            "description": "String contains filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint$search]",
+            "required": false,
+            "description": "String full-text search filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[priceData]",
+            "required": false,
+            "description": "Equality filter for \"priceData\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[listings]",
+            "required": false,
+            "description": "Equality filter for \"listings\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingListResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/token/{id}/relationships/listings": {
+      "get": {
+        "operationId": "fetch-Token-relationship-listings",
+        "description": "Fetch the \"listings\" relationships for a \"Token\"",
+        "tags": [
+          "token"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          },
+          {
+            "$ref": "#/components/parameters/sort"
+          },
+          {
+            "$ref": "#/components/parameters/page-offset"
+          },
+          {
+            "$ref": "#/components/parameters/page-limit"
+          },
+          {
+            "name": "filter[id]",
+            "required": false,
+            "description": "Id filter",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply]",
+            "required": false,
+            "description": "Equality filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply$contains]",
+            "required": false,
+            "description": "String contains filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply$search]",
+            "required": false,
+            "description": "String full-text search filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[totalSupply$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"totalSupply\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit]",
+            "required": false,
+            "description": "Equality filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit$contains]",
+            "required": false,
+            "description": "String contains filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit$search]",
+            "required": false,
+            "description": "String full-text search filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[mintLimit$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"mintLimit\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[creationDate]",
+            "required": false,
+            "description": "Equality filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[creationDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[creationDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[creationDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[creationDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"creationDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint]",
+            "required": false,
+            "description": "Equality filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint$contains]",
+            "required": false,
+            "description": "String contains filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint$icontains]",
+            "required": false,
+            "description": "String case-insensitive contains filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint$search]",
+            "required": false,
+            "description": "String full-text search filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint$startsWith]",
+            "required": false,
+            "description": "String startsWith filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[supplyLeftToMint$endsWith]",
+            "required": false,
+            "description": "String endsWith filter for \"supplyLeftToMint\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[priceData]",
+            "required": false,
+            "description": "Equality filter for \"priceData\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[listings]",
+            "required": false,
+            "description": "Equality filter for \"listings\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "update-Token-relationship-listings-put",
+        "description": "Update \"listings\" relationships for a \"Token\"",
+        "tags": [
+          "token"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/_toManyRelationshipRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "update-Token-relationship-listings-patch",
+        "description": "Update \"listings\" relationships for a \"Token\"",
+        "tags": [
+          "token"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/_toManyRelationshipRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "create-Token-relationship-listings",
+        "description": "Create new \"listings\" relationships for a \"Token\"",
+        "tags": [
+          "token"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/_toManyRelationshipRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toManyRelationshipResponse"
+                }
+              }
+            }
           },
           "403": {
             "description": "Request is forbidden",
@@ -1023,6 +2113,17 @@
             }
           },
           {
+            "name": "filter[token]",
+            "required": false,
+            "description": "Equality filter for \"token\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "filter[creatorAddress]",
             "required": false,
             "description": "Equality filter for \"creatorAddress\"",
@@ -1146,72 +2247,6 @@
             "schema": {
               "type": "string",
               "format": "date-time"
-            }
-          },
-          {
-            "name": "filter[ticker]",
-            "required": false,
-            "description": "Equality filter for \"ticker\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[ticker$contains]",
-            "required": false,
-            "description": "String contains filter for \"ticker\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[ticker$icontains]",
-            "required": false,
-            "description": "String case-insensitive contains filter for \"ticker\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[ticker$search]",
-            "required": false,
-            "description": "String full-text search filter for \"ticker\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[ticker$startsWith]",
-            "required": false,
-            "description": "String startsWith filter for \"ticker\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[ticker$endsWith]",
-            "required": false,
-            "description": "String endsWith filter for \"ticker\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
             }
           },
           {
@@ -2407,6 +3442,560 @@
         }
       }
     },
+    "/api/listing/{id}/token": {
+      "get": {
+        "operationId": "fetch-Listing-related-token",
+        "description": "Fetch the related \"token\" resource for \"Listing\"",
+        "tags": [
+          "listing"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          },
+          {
+            "$ref": "#/components/parameters/include"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/listing/{id}/relationships/token": {
+      "get": {
+        "operationId": "fetch-Listing-relationship-token",
+        "description": "Fetch the \"token\" relationships for a \"Listing\"",
+        "tags": [
+          "listing"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toOneRelationshipResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "update-Listing-relationship-token-put",
+        "description": "Update \"token\" relationship for a \"Listing\"",
+        "tags": [
+          "listing"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/_toOneRelationshipRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toOneRelationshipResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "update-Listing-relationship-token-patch",
+        "description": "Update \"token\" relationship for a \"Listing\"",
+        "tags": [
+          "listing"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/_toOneRelationshipRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toOneRelationshipResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/historicalPrice": {
+      "get": {
+        "operationId": "list-HistoricalPrice",
+        "description": "List \"HistoricalPrice\" resources",
+        "tags": [
+          "historicalPrice"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/include"
+          },
+          {
+            "$ref": "#/components/parameters/sort"
+          },
+          {
+            "$ref": "#/components/parameters/page-offset"
+          },
+          {
+            "$ref": "#/components/parameters/page-limit"
+          },
+          {
+            "name": "filter[id]",
+            "required": false,
+            "description": "Id filter",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter[id]",
+            "required": false,
+            "description": "Id filter",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[price]",
+            "required": false,
+            "description": "Equality filter for \"price\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[price$lt]",
+            "required": false,
+            "description": "Less-than filter for \"price\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[price$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"price\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[price$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"price\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[price$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"price\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HistoricalPriceListResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "create-HistoricalPrice",
+        "description": "Create a \"HistoricalPrice\" resource",
+        "tags": [
+          "historicalPrice"
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/HistoricalPriceCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HistoricalPriceResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/historicalPrice/{id}": {
+      "get": {
+        "operationId": "fetch-HistoricalPrice",
+        "description": "Fetch a \"HistoricalPrice\" resource",
+        "tags": [
+          "historicalPrice"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          },
+          {
+            "$ref": "#/components/parameters/include"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HistoricalPriceResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "update-HistoricalPrice-put",
+        "description": "Update a \"HistoricalPrice\" resource",
+        "tags": [
+          "historicalPrice"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/HistoricalPriceUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HistoricalPriceResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "update-HistoricalPrice-patch",
+        "description": "Update a \"HistoricalPrice\" resource",
+        "tags": [
+          "historicalPrice"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/HistoricalPriceUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HistoricalPriceResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "delete-HistoricalPrice",
+        "description": "Delete a \"HistoricalPrice\" resource",
+        "tags": [
+          "historicalPrice"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/priceData": {
       "get": {
         "operationId": "list-PriceData",
@@ -2428,9 +4017,9 @@
             "$ref": "#/components/parameters/page-limit"
           },
           {
-            "name": "filter[id]",
+            "name": "filter[token]",
             "required": false,
-            "description": "Id filter",
+            "description": "Equality filter for \"token\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -3022,6 +4611,207 @@
           }
         }
       }
+    },
+    "/api/priceData/{id}/token": {
+      "get": {
+        "operationId": "fetch-PriceData-related-token",
+        "description": "Fetch the related \"token\" resource for \"PriceData\"",
+        "tags": [
+          "priceData"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          },
+          {
+            "$ref": "#/components/parameters/include"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TokenResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/priceData/{id}/relationships/token": {
+      "get": {
+        "operationId": "fetch-PriceData-relationship-token",
+        "description": "Fetch the \"token\" relationships for a \"PriceData\"",
+        "tags": [
+          "priceData"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toOneRelationshipResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "update-PriceData-relationship-token-put",
+        "description": "Update \"token\" relationship for a \"PriceData\"",
+        "tags": [
+          "priceData"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/_toOneRelationshipRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toOneRelationshipResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "update-PriceData-relationship-token-patch",
+        "description": "Update \"token\" relationship for a \"PriceData\"",
+        "tags": [
+          "priceData"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/vnd.api+json": {
+              "schema": {
+                "$ref": "#/components/schemas/_toOneRelationshipRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_toOneRelationshipResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request is forbidden",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Resource is not found",
+            "content": {
+              "application/vnd.api+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/_errorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -3189,6 +4979,164 @@
           }
         }
       },
+      "_relationLinks": {
+        "type": "object",
+        "required": [
+          "self",
+          "related"
+        ],
+        "description": "Links related to a relationship",
+        "properties": {
+          "self": {
+            "type": "string",
+            "description": "Link for fetching this relationship"
+          },
+          "related": {
+            "type": "string",
+            "description": "Link for fetching the resource represented by this relationship"
+          }
+        }
+      },
+      "_toOneRelationship": {
+        "type": "object",
+        "description": "A to-one relationship",
+        "properties": {
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/_resourceIdentifier"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "_toOneRelationshipWithLinks": {
+        "type": "object",
+        "required": [
+          "links",
+          "data"
+        ],
+        "description": "A to-one relationship with links",
+        "properties": {
+          "links": {
+            "$ref": "#/components/schemas/_relationLinks"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/_resourceIdentifier"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "_toManyRelationship": {
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "description": "A to-many relationship",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resourceIdentifier"
+            }
+          }
+        }
+      },
+      "_toManyRelationshipWithLinks": {
+        "type": "object",
+        "required": [
+          "links",
+          "data"
+        ],
+        "description": "A to-many relationship with links",
+        "properties": {
+          "links": {
+            "$ref": "#/components/schemas/_pagedRelationLinks"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resourceIdentifier"
+            }
+          }
+        }
+      },
+      "_pagedRelationLinks": {
+        "description": "Relationship links with pagination information",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/_pagination"
+          },
+          {
+            "$ref": "#/components/schemas/_relationLinks"
+          }
+        ]
+      },
+      "_toManyRelationshipRequest": {
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "description": "Input for manipulating a to-many relationship",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resourceIdentifier"
+            }
+          }
+        }
+      },
+      "_toOneRelationshipRequest": {
+        "description": "Input for manipulating a to-one relationship",
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/_resourceIdentifier"
+          }
+        },
+        "nullable": true
+      },
+      "_toManyRelationshipResponse": {
+        "description": "Response for a to-many relationship",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/_toManyRelationshipWithLinks"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "jsonapi": {
+                "$ref": "#/components/schemas/_jsonapi"
+              }
+            }
+          }
+        ]
+      },
+      "_toOneRelationshipResponse": {
+        "description": "Response for a to-one relationship",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/_toOneRelationshipWithLinks"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "jsonapi": {
+                "$ref": "#/components/schemas/_jsonapi"
+              }
+            }
+          }
+        ]
+      },
       "Token": {
         "type": "object",
         "description": "The \"Token\" model",
@@ -3219,6 +5167,22 @@
               },
               "supplyLeftToMint": {
                 "type": "string"
+              }
+            }
+          },
+          "relationships": {
+            "type": "object",
+            "properties": {
+              "priceData": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/_toOneRelationshipWithLinks"
+                  }
+                ],
+                "nullable": true
+              },
+              "listings": {
+                "$ref": "#/components/schemas/_toManyRelationshipWithLinks"
               }
             }
           }
@@ -3269,6 +5233,22 @@
                     "type": "string"
                   }
                 }
+              },
+              "relationships": {
+                "type": "object",
+                "properties": {
+                  "priceData": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/_toOneRelationship"
+                      }
+                    ],
+                    "nullable": true
+                  },
+                  "listings": {
+                    "$ref": "#/components/schemas/_toManyRelationship"
+                  }
+                }
               }
             }
           },
@@ -3316,6 +5296,22 @@
                     "type": "string"
                   }
                 }
+              },
+              "relationships": {
+                "type": "object",
+                "properties": {
+                  "priceData": {
+                    "allOf": [
+                      {
+                        "$ref": "#/components/schemas/_toOneRelationship"
+                      }
+                    ],
+                    "nullable": true
+                  },
+                  "listings": {
+                    "$ref": "#/components/schemas/_toManyRelationship"
+                  }
+                }
               }
             }
           },
@@ -3344,7 +5340,14 @@
                 "properties": {
                   "relationships": {
                     "type": "object",
-                    "properties": {}
+                    "properties": {
+                      "priceData": {
+                        "$ref": "#/components/schemas/_toOneRelationship"
+                      },
+                      "listings": {
+                        "$ref": "#/components/schemas/_toManyRelationship"
+                      }
+                    }
                   }
                 }
               }
@@ -3387,7 +5390,14 @@
                   "properties": {
                     "relationships": {
                       "type": "object",
-                      "properties": {}
+                      "properties": {
+                        "priceData": {
+                          "$ref": "#/components/schemas/_toOneRelationship"
+                        },
+                        "listings": {
+                          "$ref": "#/components/schemas/_toManyRelationship"
+                        }
+                      }
                     }
                   }
                 }
@@ -3710,6 +5720,14 @@
                 "nullable": true
               }
             }
+          },
+          "relationships": {
+            "type": "object",
+            "properties": {
+              "token": {
+                "$ref": "#/components/schemas/_toOneRelationshipWithLinks"
+              }
+            }
           }
         }
       },
@@ -3830,6 +5848,14 @@
                     "nullable": true
                   }
                 }
+              },
+              "relationships": {
+                "type": "object",
+                "properties": {
+                  "token": {
+                    "$ref": "#/components/schemas/_toOneRelationship"
+                  }
+                }
               }
             }
           },
@@ -3934,6 +5960,14 @@
                     "nullable": true
                   }
                 }
+              },
+              "relationships": {
+                "type": "object",
+                "properties": {
+                  "token": {
+                    "$ref": "#/components/schemas/_toOneRelationship"
+                  }
+                }
               }
             }
           },
@@ -3962,7 +5996,11 @@
                 "properties": {
                   "relationships": {
                     "type": "object",
-                    "properties": {}
+                    "properties": {
+                      "token": {
+                        "$ref": "#/components/schemas/_toOneRelationship"
+                      }
+                    }
                   }
                 }
               }
@@ -3999,6 +6037,203 @@
               "allOf": [
                 {
                   "$ref": "#/components/schemas/Listing"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "relationships": {
+                      "type": "object",
+                      "properties": {
+                        "token": {
+                          "$ref": "#/components/schemas/_toOneRelationship"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resource"
+            }
+          },
+          "links": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/_links"
+              },
+              {
+                "$ref": "#/components/schemas/_pagination"
+              }
+            ]
+          }
+        }
+      },
+      "HistoricalPrice": {
+        "type": "object",
+        "description": "The \"HistoricalPrice\" model",
+        "required": [
+          "id",
+          "type",
+          "attributes"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "price": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      },
+      "HistoricalPriceCreateRequest": {
+        "type": "object",
+        "description": "Input for creating a \"HistoricalPrice\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "The \"HistoricalPrice\" model",
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "object",
+                "required": [
+                  "price"
+                ],
+                "properties": {
+                  "price": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          }
+        }
+      },
+      "HistoricalPriceUpdateRequest": {
+        "type": "object",
+        "description": "Input for updating a \"HistoricalPrice\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "The \"HistoricalPrice\" model",
+            "required": [
+              "id",
+              "type",
+              "attributes"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "attributes": {
+                "type": "object",
+                "properties": {
+                  "price": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          }
+        }
+      },
+      "HistoricalPriceResponse": {
+        "type": "object",
+        "description": "Response for a \"HistoricalPrice\"",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "jsonapi": {
+            "$ref": "#/components/schemas/_jsonapi"
+          },
+          "data": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/HistoricalPrice"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "relationships": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            ]
+          },
+          "meta": {
+            "$ref": "#/components/schemas/_meta"
+          },
+          "included": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/_resource"
+            }
+          },
+          "links": {
+            "$ref": "#/components/schemas/_links"
+          }
+        }
+      },
+      "HistoricalPriceListResponse": {
+        "type": "object",
+        "description": "Response for a list of \"HistoricalPrice\"",
+        "required": [
+          "data",
+          "links"
+        ],
+        "properties": {
+          "jsonapi": {
+            "$ref": "#/components/schemas/_jsonapi"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/HistoricalPrice"
                 },
                 {
                   "type": "object",
@@ -4070,6 +6305,14 @@
                 "type": "number"
               }
             }
+          },
+          "relationships": {
+            "type": "object",
+            "properties": {
+              "token": {
+                "$ref": "#/components/schemas/_toOneRelationshipWithLinks"
+              }
+            }
           }
         }
       },
@@ -4125,6 +6368,14 @@
                     "type": "number"
                   }
                 }
+              },
+              "relationships": {
+                "type": "object",
+                "properties": {
+                  "token": {
+                    "$ref": "#/components/schemas/_toOneRelationship"
+                  }
+                }
               }
             }
           },
@@ -4177,6 +6428,14 @@
                     "type": "number"
                   }
                 }
+              },
+              "relationships": {
+                "type": "object",
+                "properties": {
+                  "token": {
+                    "$ref": "#/components/schemas/_toOneRelationship"
+                  }
+                }
               }
             }
           },
@@ -4205,7 +6464,11 @@
                 "properties": {
                   "relationships": {
                     "type": "object",
-                    "properties": {}
+                    "properties": {
+                      "token": {
+                        "$ref": "#/components/schemas/_toOneRelationship"
+                      }
+                    }
                   }
                 }
               }
@@ -4248,7 +6511,11 @@
                   "properties": {
                     "relationships": {
                       "type": "object",
-                      "properties": {}
+                      "properties": {
+                        "token": {
+                          "$ref": "#/components/schemas/_toOneRelationship"
+                        }
+                      }
                     }
                   }
                 }

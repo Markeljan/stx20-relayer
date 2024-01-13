@@ -1,5 +1,5 @@
 import { Prisma, PrismaClient } from "@prisma/client";
-import { stx20Api } from "./config";
+import { stx20Api } from "./api-stx20";
 const prisma = new PrismaClient();
 
 export const updateBalances = async () => {
@@ -44,7 +44,7 @@ export const updateBalances = async () => {
     // Execute all upsert operations concurrently
     const result = await prisma.$transaction(balancesToUpsert.map((b) => prisma.balance.upsert(b)));
     console.log("Balances updated:", result);
-    return balances;
+    return result;
   } catch (error) {
     console.error("An error occurred while updating balances:", error);
     throw error;

@@ -1,5 +1,5 @@
 import { Prisma, PrismaClient } from "@prisma/client";
-import { stx20Api } from "./config";
+import { stx20Api } from "./api-stx20";
 
 const prisma = new PrismaClient();
 
@@ -46,7 +46,7 @@ export const updateTokens = async () => {
     console.log(`Updating ${tokensToUpsert.length} tokens...`);
     const result = await prisma.$transaction(tokensToUpsert.map((t) => prisma.token.upsert(t)));
     console.log(`Updated ${result.length} tokens successfully.`);
-    return tokens;
+    return result;
   } catch (error) {
     console.error(`Failed to update tokens:`, error);
     throw error;

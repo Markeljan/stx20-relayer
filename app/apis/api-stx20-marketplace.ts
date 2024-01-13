@@ -13,11 +13,17 @@ type ListingsApiResponse = {
   pagination: Pagination;
 };
 
-type ListingDetailsApiResponse =
-  | {
-      data: Listing;
-    }
-  | { success: boolean; message: string };
+type FloorPriceApiResponse = {
+  success: boolean;
+  data: {
+    minPriceRate: number;
+    maxPriceRate: number;
+    medianPriceRate: number;
+    meanPriceRate: number;
+    medianMinPriceRate: number;
+    medianMaxPriceRate: number;
+  };
+};
 
 class Stx20MarketplaceApi {
   private basePath: string;
@@ -35,13 +41,11 @@ class Stx20MarketplaceApi {
     return json;
   }
 
-  async fetchListingDetails(id: string): Promise<ListingDetailsApiResponse> {
-    const response = await fetch(`${this.basePath}sell-request/${id}`);
-    const json = (await response.json()) as ListingDetailsApiResponse;
+  async fetchTokenFloorPrice(ticker: string): Promise<FloorPriceApiResponse> {
+    const response = await fetch(`${this.basePath}sell-requests/floor-price/${ticker}`);
+    const json = (await response.json()) as FloorPriceApiResponse;
     return json;
   }
-
-  // Additional methods similar to Stx20Api can be added here as needed.
 }
 
 export const stx20MarketplaceApi = new Stx20MarketplaceApi();

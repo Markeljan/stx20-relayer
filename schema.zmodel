@@ -53,18 +53,23 @@ model Listing {
     isBuried Boolean?
 }
 
+model HistoricalPrice {
+    @@id([ticker, date])
+    ticker String
+    date DateTime
+    price Float
+}
+
 model PriceData {
     ticker String @id
     token Token @relation(fields: [ticker], references: [ticker])
     minPriceRate Float
-    prevMinPriceRate Float
     maxPriceRate Float
     medianPriceRate Float
     meanPriceRate Float
     medianMinPriceRate Float
     medianMaxPriceRate Float
 }
-
 
 plugin openapi {
     provider = '@zenstackhq/openapi'

@@ -1,6 +1,6 @@
 import { connectWebSocketClient } from "@stacks/blockchain-api-client";
-import { updateListings } from "./apis/stx20-marketplace/update-listings";
-import { updateTokens } from "./apis/stx20/update-tokens";
+import { updateListings } from "./apis/update-listings";
+import { updateTokens } from "./apis/update-tokens";
 
 const stackClient = await connectWebSocketClient();
 
@@ -10,7 +10,7 @@ const main = async () => {
   await updateListings();
 };
 
-// RUN MAIN
+// Update tokens and listings on startup
 await main();
 
 // listen for new blocks
@@ -20,10 +20,8 @@ stackClient.subscribeBlocks((block) => {
   console.log("Waiting 10 seconds for indexing...");
   setTimeout(async () => {
     await main();
+    console.log("Listening for new blocks...");
   }, 10000);
-
-  main();
-  console.log("Listening for new blocks...");
 });
 
 console.log("Listening for new blocks...");

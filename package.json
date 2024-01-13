@@ -3,9 +3,7 @@
   "main": "/api/index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun app/index.ts",
-    "build": "bun build app/index.ts --outdir build --target node",
-    "start": "bun build/index.js",
+    "dev": "bun api/index.ts",
     "vercel-build": "zenstack generate && prisma db push"
   },
   "devDependencies": {
