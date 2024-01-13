@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import fs from "fs";
+import * as fs from "fs";
 import path from "path";
 
 import { PrismaClient } from "@prisma/client";
@@ -70,7 +70,7 @@ app.get(
 /////////////// Generated ////////////////////
 //////////////////////////////////////////////
 
-const __dirname = import.meta.dir;
+const __dirname = import.meta.dirname ?? "";
 
 // Vercel can't properly serve the Swagger UI CSS from its npm package, here we
 // load it from a public location
