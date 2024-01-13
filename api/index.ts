@@ -70,7 +70,7 @@ app.get(
 /////////////// Generated ////////////////////
 //////////////////////////////////////////////
 
-const __dirname = import.meta.dirname ?? "";
+const __dirname = path.resolve();
 
 // Vercel can't properly serve the Swagger UI CSS from its npm package, here we
 // load it from a public location

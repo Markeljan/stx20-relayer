@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "lib": ["ESNext"],
-    "module": "esnext",
-    "target": "esnext",
-    "moduleResolution": "node",
+    "module": "ES6",
+    "target": "ES6",
+    "moduleResolution": "Node",
     "moduleDetection": "force",
     "esModuleInterop": true,
     //"allowImportingTsExtensions": true,
@@ -15,9 +15,6 @@
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "allowJs": true,
-    "types": [
-      "bun-types" // add Bun global
-    ]
+    "allowJs": true
   }
 }
