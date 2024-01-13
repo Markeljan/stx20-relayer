@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "bun api/index.ts",
-    "vercel-build": "zenstack generate && prisma db push"
+    "postinstall": "zenstack generate && prisma db push"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
