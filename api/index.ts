@@ -11,7 +11,7 @@ const openApiSpec = require("../stx20-api.json");
 //////////////////////////////////////////////
 /////////////// CONFIG ///////////////////////
 //////////////////////////////////////////////
-const APP_DOMAIN = "http://stx20api.vercel.app";
+const APP_DOMAIN = "https://stx20api.vercel.app";
 const app = express();
 app.use(express.json({ limit: "2mb" }));
 app.use(cors());
