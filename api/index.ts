@@ -1,12 +1,11 @@
-import express, { Request, Response } from "express";
-import * as fs from "fs";
-import path from "path";
+import express from "express";
 
 import { PrismaClient } from "@prisma/client";
 import makeHandler from "@zenstackhq/server/api/rest";
 
 import cors from "cors";
 import swaggerUI from "swagger-ui-express";
+import OpenApiSpec from "../stx20-api.json";
 const { ZenStackMiddleware } = require("@zenstackhq/server/express");
 
 //////////////////////////////////////////////
@@ -73,10 +72,9 @@ app.get(
 
 // Vercel can't properly serve the Swagger UI CSS from its npm package, here we
 // load it from a public location
-const options = { customCssUrl: "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.18.3/swagger-ui.css" };
-const spec = JSON.parse(fs.readFileSync(path.join(__dirname, "../stx20-api.json"), "utf8"));
+const options = { customCssUrl: "../swagger.css" };
 
-app.use("/api/docs", swaggerUI.serve, swaggerUI.setup(spec, options));
+app.use("/api/docs", swaggerUI.serve, swaggerUI.setup(OpenApiSpec, options));
 
 app.use(
   "/api",
