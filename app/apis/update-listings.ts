@@ -124,7 +124,6 @@ export const updateListings = async () => {
   });
 
   const priceDataToUpsert: Prisma.PriceDataUpsertArgs[] = [];
-  const historicalPriceDataToUpsert: Prisma.HistoricalPriceUpsertArgs[] = [];
 
   // prepare priceData for upsert
   priceDataWithTicker.forEach((priceData) => {
@@ -150,22 +149,6 @@ export const updateListings = async () => {
         medianPriceRate: priceData.medianPriceRate,
       },
     });
-    historicalPriceDataToUpsert.push({
-      where: {
-        ticker_date: {
-          ticker: priceData.ticker,
-          date: new Date(),
-        },
-      },
-      create: {
-        ticker: priceData.ticker,
-        date: new Date(),
-        price: priceData.minPriceRate,
-      },
-      update: {
-        price: priceData.minPriceRate,
-      },
-    });
   });
 
   try {
@@ -174,13 +157,12 @@ export const updateListings = async () => {
     const result = await prisma.$transaction([
       ...listingsToUpsert.map((l) => prisma.listing.upsert(l)),
       ...priceDataToUpsert.map((p) => prisma.priceData.upsert(p)),
-      ...historicalPriceDataToUpsert.map((h) => prisma.historicalPrice.upsert(h)),
     ]);
-    console.log(`Updated ${result.length} listings, price data, and historical price data successfully.`);
+    console.log(`Updated ${result.length} listings, price data successfully.`);
 
     return result;
   } catch (error) {
-    console.error(`Failed to update listings, price data, and historical price data.`, error);
+    console.error(`Failed to update listings, price data.`, error);
     throw error;
   }
 };

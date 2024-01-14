@@ -59,14 +59,6 @@ model Listing {
     isBuried Boolean?
 }
 
-model HistoricalPrice {
-    ticker String
-    date DateTime
-    price Float
-
-    @@id([ticker, date])
-}
-
 model PriceData {
     ticker String @id()
     token Token @relation(fields: [ticker], references: [ticker])
