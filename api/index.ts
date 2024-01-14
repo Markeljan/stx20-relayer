@@ -4,9 +4,9 @@ import makeHandler from "@zenstackhq/server/api/rest";
 
 import cors from "cors";
 import swaggerUI from "swagger-ui-express";
+import openApiSpec from "../stx20-api.json";
 const { ZenStackMiddleware } = require("@zenstackhq/server/express");
 const { PrismaClient } = require("@prisma/client");
-const openApiSpec = require("../stx20-api.json");
 
 //////////////////////////////////////////////
 /////////////// CONFIG ///////////////////////
