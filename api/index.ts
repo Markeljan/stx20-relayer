@@ -2,11 +2,12 @@ import express from "express";
 
 import makeHandler from "@zenstackhq/server/api/rest";
 
+import { PrismaClient } from "@prisma/client";
 import cors from "cors";
 import swaggerUI from "swagger-ui-express";
 import openApiSpec from "../stx20-api.json";
 const { ZenStackMiddleware } = require("@zenstackhq/server/express");
-const { PrismaClient } = require("@prisma/client");
+// const { PrismaClient } = require("@prisma/client");
 
 //////////////////////////////////////////////
 /////////////// CONFIG ///////////////////////
@@ -26,9 +27,10 @@ const wrappedApiHandler = async (req: any) => {
     const response = await apiHandler(req);
 
     // Assuming the response data is in response.body
-    if (response && response.body) {
+    if (response.body) {
       // Process the response to remove null values
       response.body = removeNulls(response.body);
+      // if req is for /api/token append priceInSatoshis and priceInUsd to response
     }
 
     return response;

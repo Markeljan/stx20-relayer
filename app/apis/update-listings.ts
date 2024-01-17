@@ -52,12 +52,11 @@ export const updateListings = async () => {
   );
 
   // perpare listings for upsert
-  const listingsToUpsert: Prisma.ListingUpsertArgs[] = [];
-  const priceDataToFetch: string[] = [];
+  const listingUpserts: Prisma.ListingUpsertArgs[] = [];
 
   // then, add them to the upsert array and add the tickers to priceDataToFetch
   listingsToUpdate.forEach((listing) => {
-    listingsToUpsert.push({
+    listingUpserts.push({
       where: {
         id: listing._id,
       },
@@ -96,73 +95,21 @@ export const updateListings = async () => {
         lastReincarnate: listing.lastReincarnate,
       },
     });
-    priceDataToFetch.push(listing.ticker);
   });
 
-  if (listingsToUpsert.length === 0) {
+  if (listingUpserts.length === 0) {
     console.log(`No listings need updates.`);
     return listings;
   }
-
-  // fetch price data for tokens that need it using promise.all
-  const priceDataWithTicker = await Promise.all(
-    priceDataToFetch.map(async (ticker) => {
-      const { data: priceData } = await stx20MarketplaceApi.fetchTokenFloorPrice(ticker);
-      // add the ticker to priceData
-      const dataWithTicker = { ...priceData, ticker };
-      return dataWithTicker;
-    })
-  );
-
-  // get relevant price data from db
-  const dbPriceData = await prisma.priceData.findMany({
-    where: {
-      ticker: {
-        in: priceDataToFetch,
-      },
-    },
-  });
-
-  const priceDataToUpsert: Prisma.PriceDataUpsertArgs[] = [];
-
-  // prepare priceData for upsert
-  priceDataWithTicker.forEach((priceData) => {
-    priceDataToUpsert.push({
-      where: {
-        ticker: priceData.ticker,
-      },
-      create: {
-        ticker: priceData.ticker,
-        maxPriceRate: priceData.maxPriceRate,
-        meanPriceRate: priceData.meanPriceRate,
-        medianMaxPriceRate: priceData.medianMaxPriceRate,
-        medianMinPriceRate: priceData.medianMinPriceRate,
-        minPriceRate: priceData.minPriceRate,
-        medianPriceRate: priceData.medianPriceRate,
-      },
-      update: {
-        maxPriceRate: priceData.maxPriceRate,
-        meanPriceRate: priceData.meanPriceRate,
-        medianMaxPriceRate: priceData.medianMaxPriceRate,
-        medianMinPriceRate: priceData.medianMinPriceRate,
-        minPriceRate: priceData.minPriceRate,
-        medianPriceRate: priceData.medianPriceRate,
-      },
-    });
-  });
-
   try {
     // Execute all upsert operations concurrently
-    console.log(`Updating ${listingsToUpsert.length} listings and ${priceDataToUpsert.length} price data...`);
-    const result = await prisma.$transaction([
-      ...listingsToUpsert.map((l) => prisma.listing.upsert(l)),
-      ...priceDataToUpsert.map((p) => prisma.priceData.upsert(p)),
-    ]);
-    console.log(`Updated ${result.length} listings, price data successfully.`);
+    console.log(`Updating ${listingUpserts.length} listings `);
+    const result = await prisma.$transaction([...listingUpserts.map((l) => prisma.listing.upsert(l))]);
+    console.log(`Updated ${result.length} listings successfully.`);
 
     return result;
   } catch (error) {
-    console.error(`Failed to update listings, price data.`, error);
+    console.error(`Failed to update listings:`, error);
     throw error;
   }
 };

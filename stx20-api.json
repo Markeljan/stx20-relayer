@@ -63,62 +63,51 @@
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[totalSupply$contains]",
+            "name": "filter[totalSupply$lt]",
             "required": false,
-            "description": "String contains filter for \"totalSupply\"",
+            "description": "Less-than filter for \"totalSupply\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[totalSupply$icontains]",
+            "name": "filter[totalSupply$lte]",
             "required": false,
-            "description": "String case-insensitive contains filter for \"totalSupply\"",
+            "description": "Less-than or equal filter for \"totalSupply\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[totalSupply$search]",
+            "name": "filter[totalSupply$gt]",
             "required": false,
-            "description": "String full-text search filter for \"totalSupply\"",
+            "description": "Greater-than filter for \"totalSupply\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[totalSupply$startsWith]",
+            "name": "filter[totalSupply$gte]",
             "required": false,
-            "description": "String startsWith filter for \"totalSupply\"",
+            "description": "Greater-than or equal filter for \"totalSupply\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[totalSupply$endsWith]",
-            "required": false,
-            "description": "String endsWith filter for \"totalSupply\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
@@ -129,62 +118,51 @@
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[mintLimit$contains]",
+            "name": "filter[mintLimit$lt]",
             "required": false,
-            "description": "String contains filter for \"mintLimit\"",
+            "description": "Less-than filter for \"mintLimit\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[mintLimit$icontains]",
+            "name": "filter[mintLimit$lte]",
             "required": false,
-            "description": "String case-insensitive contains filter for \"mintLimit\"",
+            "description": "Less-than or equal filter for \"mintLimit\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[mintLimit$search]",
+            "name": "filter[mintLimit$gt]",
             "required": false,
-            "description": "String full-text search filter for \"mintLimit\"",
+            "description": "Greater-than filter for \"mintLimit\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[mintLimit$startsWith]",
+            "name": "filter[mintLimit$gte]",
             "required": false,
-            "description": "String startsWith filter for \"mintLimit\"",
+            "description": "Greater-than or equal filter for \"mintLimit\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[mintLimit$endsWith]",
-            "required": false,
-            "description": "String endsWith filter for \"mintLimit\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
@@ -255,62 +233,1286 @@
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[supplyLeftToMint$contains]",
+            "name": "filter[supplyLeftToMint$lt]",
             "required": false,
-            "description": "String contains filter for \"supplyLeftToMint\"",
+            "description": "Less-than filter for \"supplyLeftToMint\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[supplyLeftToMint$icontains]",
+            "name": "filter[supplyLeftToMint$lte]",
             "required": false,
-            "description": "String case-insensitive contains filter for \"supplyLeftToMint\"",
+            "description": "Less-than or equal filter for \"supplyLeftToMint\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[supplyLeftToMint$search]",
+            "name": "filter[supplyLeftToMint$gt]",
             "required": false,
-            "description": "String full-text search filter for \"supplyLeftToMint\"",
+            "description": "Greater-than filter for \"supplyLeftToMint\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[supplyLeftToMint$startsWith]",
+            "name": "filter[supplyLeftToMint$gte]",
             "required": false,
-            "description": "String startsWith filter for \"supplyLeftToMint\"",
+            "description": "Greater-than or equal filter for \"supplyLeftToMint\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[supplyLeftToMint$endsWith]",
+            "name": "filter[percentageMinted]",
             "required": false,
-            "description": "String endsWith filter for \"supplyLeftToMint\"",
+            "description": "Equality filter for \"percentageMinted\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[percentageMinted$lt]",
+            "required": false,
+            "description": "Less-than filter for \"percentageMinted\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[percentageMinted$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"percentageMinted\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[percentageMinted$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"percentageMinted\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[percentageMinted$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"percentageMinted\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hValue]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice1hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice1hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice1hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice1hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice1hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hDate]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice1hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice1hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice1hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice1hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice1hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hChange]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice1hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hChange$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice1hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hChange$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice1hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hChange$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice1hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hChange$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice1hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hValue]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice6hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice6hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice6hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice6hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice6hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hDate]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice6hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice6hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice6hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice6hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice6hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hChange]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice6hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hChange$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice6hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hChange$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice6hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hChange$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice6hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hChange$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice6hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hValue]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice24hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice24hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice24hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice24hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice24hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hDate]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice24hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice24hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice24hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice24hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice24hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hChange]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice24hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hChange$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice24hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hChange$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice24hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hChange$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice24hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hChange$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice24hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dValue]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice7dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice7dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice7dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice7dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice7dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dDate]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice7dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice7dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice7dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice7dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice7dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dChange]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice7dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dChange$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice7dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dChange$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice7dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dChange$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice7dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dChange$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice7dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dValue]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice30dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice30dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice30dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice30dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice30dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dDate]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice30dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice30dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice30dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice30dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice30dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dChange]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice30dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dChange$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice30dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dChange$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice30dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dChange$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice30dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dChange$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice30dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceSats]",
+            "required": false,
+            "description": "Equality filter for \"floorPriceSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceSats$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPriceSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceSats$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPriceSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceSats$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPriceSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceSats$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPriceSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceUsd]",
+            "required": false,
+            "description": "Equality filter for \"floorPriceUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceUsd$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPriceUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceUsd$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPriceUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceUsd$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPriceUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceUsd$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPriceUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCap]",
+            "required": false,
+            "description": "Equality filter for \"marketCap\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCap$lt]",
+            "required": false,
+            "description": "Less-than filter for \"marketCap\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCap$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"marketCap\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCap$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"marketCap\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCap$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"marketCap\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCapUsd]",
+            "required": false,
+            "description": "Equality filter for \"marketCapUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCapUsd$lt]",
+            "required": false,
+            "description": "Less-than filter for \"marketCapUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCapUsd$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"marketCapUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCapUsd$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"marketCapUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCapUsd$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"marketCapUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[activeListingsCount]",
+            "required": false,
+            "description": "Equality filter for \"activeListingsCount\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[activeListingsCount$lt]",
+            "required": false,
+            "description": "Less-than filter for \"activeListingsCount\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[activeListingsCount$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"activeListingsCount\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[activeListingsCount$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"activeListingsCount\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[activeListingsCount$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"activeListingsCount\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
             }
           },
           {
@@ -836,62 +2038,51 @@
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[totalSupply$contains]",
+            "name": "filter[totalSupply$lt]",
             "required": false,
-            "description": "String contains filter for \"totalSupply\"",
+            "description": "Less-than filter for \"totalSupply\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[totalSupply$icontains]",
+            "name": "filter[totalSupply$lte]",
             "required": false,
-            "description": "String case-insensitive contains filter for \"totalSupply\"",
+            "description": "Less-than or equal filter for \"totalSupply\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[totalSupply$search]",
+            "name": "filter[totalSupply$gt]",
             "required": false,
-            "description": "String full-text search filter for \"totalSupply\"",
+            "description": "Greater-than filter for \"totalSupply\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[totalSupply$startsWith]",
+            "name": "filter[totalSupply$gte]",
             "required": false,
-            "description": "String startsWith filter for \"totalSupply\"",
+            "description": "Greater-than or equal filter for \"totalSupply\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[totalSupply$endsWith]",
-            "required": false,
-            "description": "String endsWith filter for \"totalSupply\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
@@ -902,62 +2093,51 @@
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[mintLimit$contains]",
+            "name": "filter[mintLimit$lt]",
             "required": false,
-            "description": "String contains filter for \"mintLimit\"",
+            "description": "Less-than filter for \"mintLimit\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[mintLimit$icontains]",
+            "name": "filter[mintLimit$lte]",
             "required": false,
-            "description": "String case-insensitive contains filter for \"mintLimit\"",
+            "description": "Less-than or equal filter for \"mintLimit\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[mintLimit$search]",
+            "name": "filter[mintLimit$gt]",
             "required": false,
-            "description": "String full-text search filter for \"mintLimit\"",
+            "description": "Greater-than filter for \"mintLimit\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[mintLimit$startsWith]",
+            "name": "filter[mintLimit$gte]",
             "required": false,
-            "description": "String startsWith filter for \"mintLimit\"",
+            "description": "Greater-than or equal filter for \"mintLimit\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[mintLimit$endsWith]",
-            "required": false,
-            "description": "String endsWith filter for \"mintLimit\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
@@ -1028,62 +2208,1286 @@
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[supplyLeftToMint$contains]",
+            "name": "filter[supplyLeftToMint$lt]",
             "required": false,
-            "description": "String contains filter for \"supplyLeftToMint\"",
+            "description": "Less-than filter for \"supplyLeftToMint\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[supplyLeftToMint$icontains]",
+            "name": "filter[supplyLeftToMint$lte]",
             "required": false,
-            "description": "String case-insensitive contains filter for \"supplyLeftToMint\"",
+            "description": "Less-than or equal filter for \"supplyLeftToMint\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[supplyLeftToMint$search]",
+            "name": "filter[supplyLeftToMint$gt]",
             "required": false,
-            "description": "String full-text search filter for \"supplyLeftToMint\"",
+            "description": "Greater-than filter for \"supplyLeftToMint\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[supplyLeftToMint$startsWith]",
+            "name": "filter[supplyLeftToMint$gte]",
             "required": false,
-            "description": "String startsWith filter for \"supplyLeftToMint\"",
+            "description": "Greater-than or equal filter for \"supplyLeftToMint\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[supplyLeftToMint$endsWith]",
+            "name": "filter[percentageMinted]",
             "required": false,
-            "description": "String endsWith filter for \"supplyLeftToMint\"",
+            "description": "Equality filter for \"percentageMinted\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[percentageMinted$lt]",
+            "required": false,
+            "description": "Less-than filter for \"percentageMinted\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[percentageMinted$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"percentageMinted\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[percentageMinted$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"percentageMinted\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[percentageMinted$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"percentageMinted\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hValue]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice1hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice1hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice1hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice1hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice1hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hDate]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice1hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice1hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice1hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice1hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice1hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hChange]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice1hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hChange$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice1hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hChange$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice1hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hChange$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice1hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hChange$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice1hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hValue]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice6hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice6hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice6hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice6hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice6hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hDate]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice6hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice6hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice6hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice6hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice6hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hChange]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice6hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hChange$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice6hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hChange$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice6hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hChange$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice6hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hChange$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice6hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hValue]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice24hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice24hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice24hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice24hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice24hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hDate]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice24hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice24hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice24hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice24hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice24hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hChange]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice24hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hChange$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice24hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hChange$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice24hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hChange$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice24hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hChange$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice24hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dValue]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice7dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice7dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice7dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice7dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice7dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dDate]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice7dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice7dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice7dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice7dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice7dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dChange]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice7dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dChange$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice7dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dChange$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice7dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dChange$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice7dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dChange$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice7dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dValue]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice30dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice30dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice30dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice30dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice30dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dDate]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice30dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice30dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice30dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice30dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice30dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dChange]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice30dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dChange$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice30dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dChange$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice30dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dChange$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice30dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dChange$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice30dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceSats]",
+            "required": false,
+            "description": "Equality filter for \"floorPriceSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceSats$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPriceSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceSats$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPriceSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceSats$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPriceSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceSats$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPriceSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceUsd]",
+            "required": false,
+            "description": "Equality filter for \"floorPriceUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceUsd$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPriceUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceUsd$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPriceUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceUsd$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPriceUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceUsd$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPriceUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCap]",
+            "required": false,
+            "description": "Equality filter for \"marketCap\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCap$lt]",
+            "required": false,
+            "description": "Less-than filter for \"marketCap\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCap$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"marketCap\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCap$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"marketCap\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCap$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"marketCap\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCapUsd]",
+            "required": false,
+            "description": "Equality filter for \"marketCapUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCapUsd$lt]",
+            "required": false,
+            "description": "Less-than filter for \"marketCapUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCapUsd$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"marketCapUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCapUsd$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"marketCapUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCapUsd$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"marketCapUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[activeListingsCount]",
+            "required": false,
+            "description": "Equality filter for \"activeListingsCount\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[activeListingsCount$lt]",
+            "required": false,
+            "description": "Less-than filter for \"activeListingsCount\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[activeListingsCount$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"activeListingsCount\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[activeListingsCount$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"activeListingsCount\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[activeListingsCount$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"activeListingsCount\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
             }
           },
           {
@@ -1185,62 +3589,51 @@
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[totalSupply$contains]",
+            "name": "filter[totalSupply$lt]",
             "required": false,
-            "description": "String contains filter for \"totalSupply\"",
+            "description": "Less-than filter for \"totalSupply\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[totalSupply$icontains]",
+            "name": "filter[totalSupply$lte]",
             "required": false,
-            "description": "String case-insensitive contains filter for \"totalSupply\"",
+            "description": "Less-than or equal filter for \"totalSupply\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[totalSupply$search]",
+            "name": "filter[totalSupply$gt]",
             "required": false,
-            "description": "String full-text search filter for \"totalSupply\"",
+            "description": "Greater-than filter for \"totalSupply\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[totalSupply$startsWith]",
+            "name": "filter[totalSupply$gte]",
             "required": false,
-            "description": "String startsWith filter for \"totalSupply\"",
+            "description": "Greater-than or equal filter for \"totalSupply\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[totalSupply$endsWith]",
-            "required": false,
-            "description": "String endsWith filter for \"totalSupply\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
@@ -1251,62 +3644,51 @@
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[mintLimit$contains]",
+            "name": "filter[mintLimit$lt]",
             "required": false,
-            "description": "String contains filter for \"mintLimit\"",
+            "description": "Less-than filter for \"mintLimit\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[mintLimit$icontains]",
+            "name": "filter[mintLimit$lte]",
             "required": false,
-            "description": "String case-insensitive contains filter for \"mintLimit\"",
+            "description": "Less-than or equal filter for \"mintLimit\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[mintLimit$search]",
+            "name": "filter[mintLimit$gt]",
             "required": false,
-            "description": "String full-text search filter for \"mintLimit\"",
+            "description": "Greater-than filter for \"mintLimit\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[mintLimit$startsWith]",
+            "name": "filter[mintLimit$gte]",
             "required": false,
-            "description": "String startsWith filter for \"mintLimit\"",
+            "description": "Greater-than or equal filter for \"mintLimit\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[mintLimit$endsWith]",
-            "required": false,
-            "description": "String endsWith filter for \"mintLimit\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
@@ -1377,62 +3759,1286 @@
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[supplyLeftToMint$contains]",
+            "name": "filter[supplyLeftToMint$lt]",
             "required": false,
-            "description": "String contains filter for \"supplyLeftToMint\"",
+            "description": "Less-than filter for \"supplyLeftToMint\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[supplyLeftToMint$icontains]",
+            "name": "filter[supplyLeftToMint$lte]",
             "required": false,
-            "description": "String case-insensitive contains filter for \"supplyLeftToMint\"",
+            "description": "Less-than or equal filter for \"supplyLeftToMint\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[supplyLeftToMint$search]",
+            "name": "filter[supplyLeftToMint$gt]",
             "required": false,
-            "description": "String full-text search filter for \"supplyLeftToMint\"",
+            "description": "Greater-than filter for \"supplyLeftToMint\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[supplyLeftToMint$startsWith]",
+            "name": "filter[supplyLeftToMint$gte]",
             "required": false,
-            "description": "String startsWith filter for \"supplyLeftToMint\"",
+            "description": "Greater-than or equal filter for \"supplyLeftToMint\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "integer"
             }
           },
           {
-            "name": "filter[supplyLeftToMint$endsWith]",
+            "name": "filter[percentageMinted]",
             "required": false,
-            "description": "String endsWith filter for \"supplyLeftToMint\"",
+            "description": "Equality filter for \"percentageMinted\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[percentageMinted$lt]",
+            "required": false,
+            "description": "Less-than filter for \"percentageMinted\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[percentageMinted$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"percentageMinted\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[percentageMinted$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"percentageMinted\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[percentageMinted$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"percentageMinted\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hValue]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice1hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice1hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice1hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice1hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice1hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hDate]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice1hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice1hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice1hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice1hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice1hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hChange]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice1hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hChange$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice1hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hChange$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice1hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hChange$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice1hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice1hChange$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice1hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hValue]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice6hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice6hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice6hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice6hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice6hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hDate]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice6hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice6hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice6hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice6hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice6hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hChange]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice6hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hChange$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice6hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hChange$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice6hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hChange$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice6hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice6hChange$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice6hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hValue]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice24hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice24hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice24hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice24hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice24hValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hDate]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice24hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice24hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice24hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice24hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice24hDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hChange]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice24hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hChange$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice24hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hChange$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice24hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hChange$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice24hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice24hChange$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice24hChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dValue]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice7dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice7dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice7dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice7dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice7dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dDate]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice7dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice7dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice7dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice7dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice7dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dChange]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice7dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dChange$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice7dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dChange$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice7dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dChange$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice7dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice7dChange$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice7dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dValue]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice30dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice30dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice30dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice30dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice30dValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dDate]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice30dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dDate$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice30dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dDate$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice30dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dDate$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice30dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dDate$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice30dDate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dChange]",
+            "required": false,
+            "description": "Equality filter for \"floorPrice30dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dChange$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPrice30dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dChange$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPrice30dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dChange$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPrice30dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPrice30dChange$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPrice30dChange\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceSats]",
+            "required": false,
+            "description": "Equality filter for \"floorPriceSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceSats$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPriceSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceSats$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPriceSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceSats$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPriceSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceSats$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPriceSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceUsd]",
+            "required": false,
+            "description": "Equality filter for \"floorPriceUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceUsd$lt]",
+            "required": false,
+            "description": "Less-than filter for \"floorPriceUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceUsd$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"floorPriceUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceUsd$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"floorPriceUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[floorPriceUsd$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"floorPriceUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCap]",
+            "required": false,
+            "description": "Equality filter for \"marketCap\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCap$lt]",
+            "required": false,
+            "description": "Less-than filter for \"marketCap\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCap$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"marketCap\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCap$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"marketCap\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCap$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"marketCap\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCapUsd]",
+            "required": false,
+            "description": "Equality filter for \"marketCapUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCapUsd$lt]",
+            "required": false,
+            "description": "Less-than filter for \"marketCapUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCapUsd$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"marketCapUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCapUsd$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"marketCapUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[marketCapUsd$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"marketCapUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[activeListingsCount]",
+            "required": false,
+            "description": "Equality filter for \"activeListingsCount\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[activeListingsCount$lt]",
+            "required": false,
+            "description": "Less-than filter for \"activeListingsCount\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[activeListingsCount$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"activeListingsCount\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[activeListingsCount$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"activeListingsCount\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "filter[activeListingsCount$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"activeListingsCount\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
             }
           },
           {
@@ -4799,17 +8405,88 @@
             "type": "object",
             "properties": {
               "totalSupply": {
-                "type": "string"
+                "type": "integer"
               },
               "mintLimit": {
-                "type": "string"
+                "type": "integer"
               },
               "creationDate": {
                 "type": "string",
                 "format": "date-time"
               },
               "supplyLeftToMint": {
-                "type": "string"
+                "type": "integer"
+              },
+              "percentageMinted": {
+                "type": "number"
+              },
+              "floorPrice": {
+                "type": "number"
+              },
+              "floorPrice1hValue": {
+                "type": "number"
+              },
+              "floorPrice1hDate": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "floorPrice1hChange": {
+                "type": "number"
+              },
+              "floorPrice6hValue": {
+                "type": "number"
+              },
+              "floorPrice6hDate": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "floorPrice6hChange": {
+                "type": "number"
+              },
+              "floorPrice24hValue": {
+                "type": "number"
+              },
+              "floorPrice24hDate": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "floorPrice24hChange": {
+                "type": "number"
+              },
+              "floorPrice7dValue": {
+                "type": "number"
+              },
+              "floorPrice7dDate": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "floorPrice7dChange": {
+                "type": "number"
+              },
+              "floorPrice30dValue": {
+                "type": "number"
+              },
+              "floorPrice30dDate": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "floorPrice30dChange": {
+                "type": "number"
+              },
+              "floorPriceSats": {
+                "type": "number"
+              },
+              "floorPriceUsd": {
+                "type": "number"
+              },
+              "marketCap": {
+                "type": "number"
+              },
+              "marketCapUsd": {
+                "type": "number"
+              },
+              "activeListingsCount": {
+                "type": "integer"
               }
             }
           },
@@ -4859,21 +8536,93 @@
                   "totalSupply",
                   "mintLimit",
                   "creationDate",
-                  "supplyLeftToMint"
+                  "supplyLeftToMint",
+                  "percentageMinted"
                 ],
                 "properties": {
                   "totalSupply": {
-                    "type": "string"
+                    "type": "integer"
                   },
                   "mintLimit": {
-                    "type": "string"
+                    "type": "integer"
                   },
                   "creationDate": {
                     "type": "string",
                     "format": "date-time"
                   },
                   "supplyLeftToMint": {
-                    "type": "string"
+                    "type": "integer"
+                  },
+                  "percentageMinted": {
+                    "type": "number"
+                  },
+                  "floorPrice": {
+                    "type": "number"
+                  },
+                  "floorPrice1hValue": {
+                    "type": "number"
+                  },
+                  "floorPrice1hDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "floorPrice1hChange": {
+                    "type": "number"
+                  },
+                  "floorPrice6hValue": {
+                    "type": "number"
+                  },
+                  "floorPrice6hDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "floorPrice6hChange": {
+                    "type": "number"
+                  },
+                  "floorPrice24hValue": {
+                    "type": "number"
+                  },
+                  "floorPrice24hDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "floorPrice24hChange": {
+                    "type": "number"
+                  },
+                  "floorPrice7dValue": {
+                    "type": "number"
+                  },
+                  "floorPrice7dDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "floorPrice7dChange": {
+                    "type": "number"
+                  },
+                  "floorPrice30dValue": {
+                    "type": "number"
+                  },
+                  "floorPrice30dDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "floorPrice30dChange": {
+                    "type": "number"
+                  },
+                  "floorPriceSats": {
+                    "type": "number"
+                  },
+                  "floorPriceUsd": {
+                    "type": "number"
+                  },
+                  "marketCap": {
+                    "type": "number"
+                  },
+                  "marketCapUsd": {
+                    "type": "number"
+                  },
+                  "activeListingsCount": {
+                    "type": "integer"
                   }
                 }
               },
@@ -4926,17 +8675,88 @@
                 "type": "object",
                 "properties": {
                   "totalSupply": {
-                    "type": "string"
+                    "type": "integer"
                   },
                   "mintLimit": {
-                    "type": "string"
+                    "type": "integer"
                   },
                   "creationDate": {
                     "type": "string",
                     "format": "date-time"
                   },
                   "supplyLeftToMint": {
-                    "type": "string"
+                    "type": "integer"
+                  },
+                  "percentageMinted": {
+                    "type": "number"
+                  },
+                  "floorPrice": {
+                    "type": "number"
+                  },
+                  "floorPrice1hValue": {
+                    "type": "number"
+                  },
+                  "floorPrice1hDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "floorPrice1hChange": {
+                    "type": "number"
+                  },
+                  "floorPrice6hValue": {
+                    "type": "number"
+                  },
+                  "floorPrice6hDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "floorPrice6hChange": {
+                    "type": "number"
+                  },
+                  "floorPrice24hValue": {
+                    "type": "number"
+                  },
+                  "floorPrice24hDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "floorPrice24hChange": {
+                    "type": "number"
+                  },
+                  "floorPrice7dValue": {
+                    "type": "number"
+                  },
+                  "floorPrice7dDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "floorPrice7dChange": {
+                    "type": "number"
+                  },
+                  "floorPrice30dValue": {
+                    "type": "number"
+                  },
+                  "floorPrice30dDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "floorPrice30dChange": {
+                    "type": "number"
+                  },
+                  "floorPriceSats": {
+                    "type": "number"
+                  },
+                  "floorPriceUsd": {
+                    "type": "number"
+                  },
+                  "marketCap": {
+                    "type": "number"
+                  },
+                  "marketCapUsd": {
+                    "type": "number"
+                  },
+                  "activeListingsCount": {
+                    "type": "integer"
                   }
                 }
               },

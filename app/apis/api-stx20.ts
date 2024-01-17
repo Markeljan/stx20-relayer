@@ -1,15 +1,21 @@
-import { Token } from "@prisma/client";
+type ApiToken = {
+  ticker: string;
+  totalSupply: string;
+  mintLimit: string;
+  creationDate: Date;
+  supplyLeftToMint: string;
+};
 
 type TokensApiResponse = {
   page: number;
   limit: number;
   total: number;
-  data: Token[];
+  data: ApiToken[];
 };
 
 type TokenDetailsApiResponse =
   | {
-      data: Token[];
+      data: ApiToken[];
     }
   | { success: boolean; message: string };
 
@@ -35,7 +41,7 @@ class Stx20Api {
   }
 
   async fetchAllTokens(): Promise<TokensApiResponse> {
-    const tokens: Token[] = [];
+    const tokens: ApiToken[] = [];
     while (true) {
       const page = tokens.length / 200;
       const { data: tokensResponse, total } = await this.fetchManyTokens(page);

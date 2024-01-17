@@ -16,7 +16,7 @@
     "zenstack": "^1.6.2"
   },
   "dependencies": {
-    "@prisma/client": "^5.7.1",
+    "@prisma/client": "latest",
     "@stacks/blockchain-api-client": "^7.3.6",
     "@stacks/transactions": "^6.11.0",
     "@types/cors": "^2.8.17",
