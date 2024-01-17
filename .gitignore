@@ -175,3 +175,6 @@ dist
 # Finder (MacOS) folder config
 .DS_Store
 .vercel
+
+# Ignore bun lock (bun only used for local development)
+bun.lockb
