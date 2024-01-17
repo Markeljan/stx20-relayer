@@ -391,9 +391,9 @@
             }
           },
           {
-            "name": "filter[floorPrice1hValue]",
+            "name": "filter[floorPrice1hUsd]",
             "required": false,
-            "description": "Equality filter for \"floorPrice1hValue\"",
+            "description": "Equality filter for \"floorPrice1hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -402,9 +402,9 @@
             }
           },
           {
-            "name": "filter[floorPrice1hValue$lt]",
+            "name": "filter[floorPrice1hUsd$lt]",
             "required": false,
-            "description": "Less-than filter for \"floorPrice1hValue\"",
+            "description": "Less-than filter for \"floorPrice1hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -413,9 +413,9 @@
             }
           },
           {
-            "name": "filter[floorPrice1hValue$lte]",
+            "name": "filter[floorPrice1hUsd$lte]",
             "required": false,
-            "description": "Less-than or equal filter for \"floorPrice1hValue\"",
+            "description": "Less-than or equal filter for \"floorPrice1hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -424,9 +424,9 @@
             }
           },
           {
-            "name": "filter[floorPrice1hValue$gt]",
+            "name": "filter[floorPrice1hUsd$gt]",
             "required": false,
-            "description": "Greater-than filter for \"floorPrice1hValue\"",
+            "description": "Greater-than filter for \"floorPrice1hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -435,9 +435,9 @@
             }
           },
           {
-            "name": "filter[floorPrice1hValue$gte]",
+            "name": "filter[floorPrice1hUsd$gte]",
             "required": false,
-            "description": "Greater-than or equal filter for \"floorPrice1hValue\"",
+            "description": "Greater-than or equal filter for \"floorPrice1hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -561,9 +561,9 @@
             }
           },
           {
-            "name": "filter[floorPrice6hValue]",
+            "name": "filter[floorPrice6hUsd]",
             "required": false,
-            "description": "Equality filter for \"floorPrice6hValue\"",
+            "description": "Equality filter for \"floorPrice6hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -572,9 +572,9 @@
             }
           },
           {
-            "name": "filter[floorPrice6hValue$lt]",
+            "name": "filter[floorPrice6hUsd$lt]",
             "required": false,
-            "description": "Less-than filter for \"floorPrice6hValue\"",
+            "description": "Less-than filter for \"floorPrice6hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -583,9 +583,9 @@
             }
           },
           {
-            "name": "filter[floorPrice6hValue$lte]",
+            "name": "filter[floorPrice6hUsd$lte]",
             "required": false,
-            "description": "Less-than or equal filter for \"floorPrice6hValue\"",
+            "description": "Less-than or equal filter for \"floorPrice6hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -594,9 +594,9 @@
             }
           },
           {
-            "name": "filter[floorPrice6hValue$gt]",
+            "name": "filter[floorPrice6hUsd$gt]",
             "required": false,
-            "description": "Greater-than filter for \"floorPrice6hValue\"",
+            "description": "Greater-than filter for \"floorPrice6hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -605,9 +605,9 @@
             }
           },
           {
-            "name": "filter[floorPrice6hValue$gte]",
+            "name": "filter[floorPrice6hUsd$gte]",
             "required": false,
-            "description": "Greater-than or equal filter for \"floorPrice6hValue\"",
+            "description": "Greater-than or equal filter for \"floorPrice6hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -731,9 +731,9 @@
             }
           },
           {
-            "name": "filter[floorPrice24hValue]",
+            "name": "filter[floorPrice24hUsd]",
             "required": false,
-            "description": "Equality filter for \"floorPrice24hValue\"",
+            "description": "Equality filter for \"floorPrice24hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -742,9 +742,9 @@
             }
           },
           {
-            "name": "filter[floorPrice24hValue$lt]",
+            "name": "filter[floorPrice24hUsd$lt]",
             "required": false,
-            "description": "Less-than filter for \"floorPrice24hValue\"",
+            "description": "Less-than filter for \"floorPrice24hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -753,9 +753,9 @@
             }
           },
           {
-            "name": "filter[floorPrice24hValue$lte]",
+            "name": "filter[floorPrice24hUsd$lte]",
             "required": false,
-            "description": "Less-than or equal filter for \"floorPrice24hValue\"",
+            "description": "Less-than or equal filter for \"floorPrice24hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -764,9 +764,9 @@
             }
           },
           {
-            "name": "filter[floorPrice24hValue$gt]",
+            "name": "filter[floorPrice24hUsd$gt]",
             "required": false,
-            "description": "Greater-than filter for \"floorPrice24hValue\"",
+            "description": "Greater-than filter for \"floorPrice24hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -775,9 +775,9 @@
             }
           },
           {
-            "name": "filter[floorPrice24hValue$gte]",
+            "name": "filter[floorPrice24hUsd$gte]",
             "required": false,
-            "description": "Greater-than or equal filter for \"floorPrice24hValue\"",
+            "description": "Greater-than or equal filter for \"floorPrice24hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -901,9 +901,9 @@
             }
           },
           {
-            "name": "filter[floorPrice7dValue]",
+            "name": "filter[floorPrice7dUsd]",
             "required": false,
-            "description": "Equality filter for \"floorPrice7dValue\"",
+            "description": "Equality filter for \"floorPrice7dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -912,9 +912,9 @@
             }
           },
           {
-            "name": "filter[floorPrice7dValue$lt]",
+            "name": "filter[floorPrice7dUsd$lt]",
             "required": false,
-            "description": "Less-than filter for \"floorPrice7dValue\"",
+            "description": "Less-than filter for \"floorPrice7dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -923,9 +923,9 @@
             }
           },
           {
-            "name": "filter[floorPrice7dValue$lte]",
+            "name": "filter[floorPrice7dUsd$lte]",
             "required": false,
-            "description": "Less-than or equal filter for \"floorPrice7dValue\"",
+            "description": "Less-than or equal filter for \"floorPrice7dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -934,9 +934,9 @@
             }
           },
           {
-            "name": "filter[floorPrice7dValue$gt]",
+            "name": "filter[floorPrice7dUsd$gt]",
             "required": false,
-            "description": "Greater-than filter for \"floorPrice7dValue\"",
+            "description": "Greater-than filter for \"floorPrice7dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -945,9 +945,9 @@
             }
           },
           {
-            "name": "filter[floorPrice7dValue$gte]",
+            "name": "filter[floorPrice7dUsd$gte]",
             "required": false,
-            "description": "Greater-than or equal filter for \"floorPrice7dValue\"",
+            "description": "Greater-than or equal filter for \"floorPrice7dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -1071,9 +1071,9 @@
             }
           },
           {
-            "name": "filter[floorPrice30dValue]",
+            "name": "filter[floorPrice30dUsd]",
             "required": false,
-            "description": "Equality filter for \"floorPrice30dValue\"",
+            "description": "Equality filter for \"floorPrice30dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -1082,9 +1082,9 @@
             }
           },
           {
-            "name": "filter[floorPrice30dValue$lt]",
+            "name": "filter[floorPrice30dUsd$lt]",
             "required": false,
-            "description": "Less-than filter for \"floorPrice30dValue\"",
+            "description": "Less-than filter for \"floorPrice30dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -1093,9 +1093,9 @@
             }
           },
           {
-            "name": "filter[floorPrice30dValue$lte]",
+            "name": "filter[floorPrice30dUsd$lte]",
             "required": false,
-            "description": "Less-than or equal filter for \"floorPrice30dValue\"",
+            "description": "Less-than or equal filter for \"floorPrice30dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -1104,9 +1104,9 @@
             }
           },
           {
-            "name": "filter[floorPrice30dValue$gt]",
+            "name": "filter[floorPrice30dUsd$gt]",
             "required": false,
-            "description": "Greater-than filter for \"floorPrice30dValue\"",
+            "description": "Greater-than filter for \"floorPrice30dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -1115,9 +1115,9 @@
             }
           },
           {
-            "name": "filter[floorPrice30dValue$gte]",
+            "name": "filter[floorPrice30dUsd$gte]",
             "required": false,
-            "description": "Greater-than or equal filter for \"floorPrice30dValue\"",
+            "description": "Greater-than or equal filter for \"floorPrice30dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2366,9 +2366,9 @@
             }
           },
           {
-            "name": "filter[floorPrice1hValue]",
+            "name": "filter[floorPrice1hUsd]",
             "required": false,
-            "description": "Equality filter for \"floorPrice1hValue\"",
+            "description": "Equality filter for \"floorPrice1hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2377,9 +2377,9 @@
             }
           },
           {
-            "name": "filter[floorPrice1hValue$lt]",
+            "name": "filter[floorPrice1hUsd$lt]",
             "required": false,
-            "description": "Less-than filter for \"floorPrice1hValue\"",
+            "description": "Less-than filter for \"floorPrice1hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2388,9 +2388,9 @@
             }
           },
           {
-            "name": "filter[floorPrice1hValue$lte]",
+            "name": "filter[floorPrice1hUsd$lte]",
             "required": false,
-            "description": "Less-than or equal filter for \"floorPrice1hValue\"",
+            "description": "Less-than or equal filter for \"floorPrice1hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2399,9 +2399,9 @@
             }
           },
           {
-            "name": "filter[floorPrice1hValue$gt]",
+            "name": "filter[floorPrice1hUsd$gt]",
             "required": false,
-            "description": "Greater-than filter for \"floorPrice1hValue\"",
+            "description": "Greater-than filter for \"floorPrice1hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2410,9 +2410,9 @@
             }
           },
           {
-            "name": "filter[floorPrice1hValue$gte]",
+            "name": "filter[floorPrice1hUsd$gte]",
             "required": false,
-            "description": "Greater-than or equal filter for \"floorPrice1hValue\"",
+            "description": "Greater-than or equal filter for \"floorPrice1hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2536,9 +2536,9 @@
             }
           },
           {
-            "name": "filter[floorPrice6hValue]",
+            "name": "filter[floorPrice6hUsd]",
             "required": false,
-            "description": "Equality filter for \"floorPrice6hValue\"",
+            "description": "Equality filter for \"floorPrice6hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2547,9 +2547,9 @@
             }
           },
           {
-            "name": "filter[floorPrice6hValue$lt]",
+            "name": "filter[floorPrice6hUsd$lt]",
             "required": false,
-            "description": "Less-than filter for \"floorPrice6hValue\"",
+            "description": "Less-than filter for \"floorPrice6hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2558,9 +2558,9 @@
             }
           },
           {
-            "name": "filter[floorPrice6hValue$lte]",
+            "name": "filter[floorPrice6hUsd$lte]",
             "required": false,
-            "description": "Less-than or equal filter for \"floorPrice6hValue\"",
+            "description": "Less-than or equal filter for \"floorPrice6hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2569,9 +2569,9 @@
             }
           },
           {
-            "name": "filter[floorPrice6hValue$gt]",
+            "name": "filter[floorPrice6hUsd$gt]",
             "required": false,
-            "description": "Greater-than filter for \"floorPrice6hValue\"",
+            "description": "Greater-than filter for \"floorPrice6hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2580,9 +2580,9 @@
             }
           },
           {
-            "name": "filter[floorPrice6hValue$gte]",
+            "name": "filter[floorPrice6hUsd$gte]",
             "required": false,
-            "description": "Greater-than or equal filter for \"floorPrice6hValue\"",
+            "description": "Greater-than or equal filter for \"floorPrice6hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2706,9 +2706,9 @@
             }
           },
           {
-            "name": "filter[floorPrice24hValue]",
+            "name": "filter[floorPrice24hUsd]",
             "required": false,
-            "description": "Equality filter for \"floorPrice24hValue\"",
+            "description": "Equality filter for \"floorPrice24hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2717,9 +2717,9 @@
             }
           },
           {
-            "name": "filter[floorPrice24hValue$lt]",
+            "name": "filter[floorPrice24hUsd$lt]",
             "required": false,
-            "description": "Less-than filter for \"floorPrice24hValue\"",
+            "description": "Less-than filter for \"floorPrice24hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2728,9 +2728,9 @@
             }
           },
           {
-            "name": "filter[floorPrice24hValue$lte]",
+            "name": "filter[floorPrice24hUsd$lte]",
             "required": false,
-            "description": "Less-than or equal filter for \"floorPrice24hValue\"",
+            "description": "Less-than or equal filter for \"floorPrice24hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2739,9 +2739,9 @@
             }
           },
           {
-            "name": "filter[floorPrice24hValue$gt]",
+            "name": "filter[floorPrice24hUsd$gt]",
             "required": false,
-            "description": "Greater-than filter for \"floorPrice24hValue\"",
+            "description": "Greater-than filter for \"floorPrice24hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2750,9 +2750,9 @@
             }
           },
           {
-            "name": "filter[floorPrice24hValue$gte]",
+            "name": "filter[floorPrice24hUsd$gte]",
             "required": false,
-            "description": "Greater-than or equal filter for \"floorPrice24hValue\"",
+            "description": "Greater-than or equal filter for \"floorPrice24hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2876,9 +2876,9 @@
             }
           },
           {
-            "name": "filter[floorPrice7dValue]",
+            "name": "filter[floorPrice7dUsd]",
             "required": false,
-            "description": "Equality filter for \"floorPrice7dValue\"",
+            "description": "Equality filter for \"floorPrice7dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2887,9 +2887,9 @@
             }
           },
           {
-            "name": "filter[floorPrice7dValue$lt]",
+            "name": "filter[floorPrice7dUsd$lt]",
             "required": false,
-            "description": "Less-than filter for \"floorPrice7dValue\"",
+            "description": "Less-than filter for \"floorPrice7dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2898,9 +2898,9 @@
             }
           },
           {
-            "name": "filter[floorPrice7dValue$lte]",
+            "name": "filter[floorPrice7dUsd$lte]",
             "required": false,
-            "description": "Less-than or equal filter for \"floorPrice7dValue\"",
+            "description": "Less-than or equal filter for \"floorPrice7dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2909,9 +2909,9 @@
             }
           },
           {
-            "name": "filter[floorPrice7dValue$gt]",
+            "name": "filter[floorPrice7dUsd$gt]",
             "required": false,
-            "description": "Greater-than filter for \"floorPrice7dValue\"",
+            "description": "Greater-than filter for \"floorPrice7dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -2920,9 +2920,9 @@
             }
           },
           {
-            "name": "filter[floorPrice7dValue$gte]",
+            "name": "filter[floorPrice7dUsd$gte]",
             "required": false,
-            "description": "Greater-than or equal filter for \"floorPrice7dValue\"",
+            "description": "Greater-than or equal filter for \"floorPrice7dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -3046,9 +3046,9 @@
             }
           },
           {
-            "name": "filter[floorPrice30dValue]",
+            "name": "filter[floorPrice30dUsd]",
             "required": false,
-            "description": "Equality filter for \"floorPrice30dValue\"",
+            "description": "Equality filter for \"floorPrice30dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -3057,9 +3057,9 @@
             }
           },
           {
-            "name": "filter[floorPrice30dValue$lt]",
+            "name": "filter[floorPrice30dUsd$lt]",
             "required": false,
-            "description": "Less-than filter for \"floorPrice30dValue\"",
+            "description": "Less-than filter for \"floorPrice30dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -3068,9 +3068,9 @@
             }
           },
           {
-            "name": "filter[floorPrice30dValue$lte]",
+            "name": "filter[floorPrice30dUsd$lte]",
             "required": false,
-            "description": "Less-than or equal filter for \"floorPrice30dValue\"",
+            "description": "Less-than or equal filter for \"floorPrice30dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -3079,9 +3079,9 @@
             }
           },
           {
-            "name": "filter[floorPrice30dValue$gt]",
+            "name": "filter[floorPrice30dUsd$gt]",
             "required": false,
-            "description": "Greater-than filter for \"floorPrice30dValue\"",
+            "description": "Greater-than filter for \"floorPrice30dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -3090,9 +3090,9 @@
             }
           },
           {
-            "name": "filter[floorPrice30dValue$gte]",
+            "name": "filter[floorPrice30dUsd$gte]",
             "required": false,
-            "description": "Greater-than or equal filter for \"floorPrice30dValue\"",
+            "description": "Greater-than or equal filter for \"floorPrice30dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -3917,9 +3917,9 @@
             }
           },
           {
-            "name": "filter[floorPrice1hValue]",
+            "name": "filter[floorPrice1hUsd]",
             "required": false,
-            "description": "Equality filter for \"floorPrice1hValue\"",
+            "description": "Equality filter for \"floorPrice1hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -3928,9 +3928,9 @@
             }
           },
           {
-            "name": "filter[floorPrice1hValue$lt]",
+            "name": "filter[floorPrice1hUsd$lt]",
             "required": false,
-            "description": "Less-than filter for \"floorPrice1hValue\"",
+            "description": "Less-than filter for \"floorPrice1hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -3939,9 +3939,9 @@
             }
           },
           {
-            "name": "filter[floorPrice1hValue$lte]",
+            "name": "filter[floorPrice1hUsd$lte]",
             "required": false,
-            "description": "Less-than or equal filter for \"floorPrice1hValue\"",
+            "description": "Less-than or equal filter for \"floorPrice1hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -3950,9 +3950,9 @@
             }
           },
           {
-            "name": "filter[floorPrice1hValue$gt]",
+            "name": "filter[floorPrice1hUsd$gt]",
             "required": false,
-            "description": "Greater-than filter for \"floorPrice1hValue\"",
+            "description": "Greater-than filter for \"floorPrice1hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -3961,9 +3961,9 @@
             }
           },
           {
-            "name": "filter[floorPrice1hValue$gte]",
+            "name": "filter[floorPrice1hUsd$gte]",
             "required": false,
-            "description": "Greater-than or equal filter for \"floorPrice1hValue\"",
+            "description": "Greater-than or equal filter for \"floorPrice1hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4087,9 +4087,9 @@
             }
           },
           {
-            "name": "filter[floorPrice6hValue]",
+            "name": "filter[floorPrice6hUsd]",
             "required": false,
-            "description": "Equality filter for \"floorPrice6hValue\"",
+            "description": "Equality filter for \"floorPrice6hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4098,9 +4098,9 @@
             }
           },
           {
-            "name": "filter[floorPrice6hValue$lt]",
+            "name": "filter[floorPrice6hUsd$lt]",
             "required": false,
-            "description": "Less-than filter for \"floorPrice6hValue\"",
+            "description": "Less-than filter for \"floorPrice6hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4109,9 +4109,9 @@
             }
           },
           {
-            "name": "filter[floorPrice6hValue$lte]",
+            "name": "filter[floorPrice6hUsd$lte]",
             "required": false,
-            "description": "Less-than or equal filter for \"floorPrice6hValue\"",
+            "description": "Less-than or equal filter for \"floorPrice6hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4120,9 +4120,9 @@
             }
           },
           {
-            "name": "filter[floorPrice6hValue$gt]",
+            "name": "filter[floorPrice6hUsd$gt]",
             "required": false,
-            "description": "Greater-than filter for \"floorPrice6hValue\"",
+            "description": "Greater-than filter for \"floorPrice6hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4131,9 +4131,9 @@
             }
           },
           {
-            "name": "filter[floorPrice6hValue$gte]",
+            "name": "filter[floorPrice6hUsd$gte]",
             "required": false,
-            "description": "Greater-than or equal filter for \"floorPrice6hValue\"",
+            "description": "Greater-than or equal filter for \"floorPrice6hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4257,9 +4257,9 @@
             }
           },
           {
-            "name": "filter[floorPrice24hValue]",
+            "name": "filter[floorPrice24hUsd]",
             "required": false,
-            "description": "Equality filter for \"floorPrice24hValue\"",
+            "description": "Equality filter for \"floorPrice24hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4268,9 +4268,9 @@
             }
           },
           {
-            "name": "filter[floorPrice24hValue$lt]",
+            "name": "filter[floorPrice24hUsd$lt]",
             "required": false,
-            "description": "Less-than filter for \"floorPrice24hValue\"",
+            "description": "Less-than filter for \"floorPrice24hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4279,9 +4279,9 @@
             }
           },
           {
-            "name": "filter[floorPrice24hValue$lte]",
+            "name": "filter[floorPrice24hUsd$lte]",
             "required": false,
-            "description": "Less-than or equal filter for \"floorPrice24hValue\"",
+            "description": "Less-than or equal filter for \"floorPrice24hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4290,9 +4290,9 @@
             }
           },
           {
-            "name": "filter[floorPrice24hValue$gt]",
+            "name": "filter[floorPrice24hUsd$gt]",
             "required": false,
-            "description": "Greater-than filter for \"floorPrice24hValue\"",
+            "description": "Greater-than filter for \"floorPrice24hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4301,9 +4301,9 @@
             }
           },
           {
-            "name": "filter[floorPrice24hValue$gte]",
+            "name": "filter[floorPrice24hUsd$gte]",
             "required": false,
-            "description": "Greater-than or equal filter for \"floorPrice24hValue\"",
+            "description": "Greater-than or equal filter for \"floorPrice24hUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4427,9 +4427,9 @@
             }
           },
           {
-            "name": "filter[floorPrice7dValue]",
+            "name": "filter[floorPrice7dUsd]",
             "required": false,
-            "description": "Equality filter for \"floorPrice7dValue\"",
+            "description": "Equality filter for \"floorPrice7dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4438,9 +4438,9 @@
             }
           },
           {
-            "name": "filter[floorPrice7dValue$lt]",
+            "name": "filter[floorPrice7dUsd$lt]",
             "required": false,
-            "description": "Less-than filter for \"floorPrice7dValue\"",
+            "description": "Less-than filter for \"floorPrice7dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4449,9 +4449,9 @@
             }
           },
           {
-            "name": "filter[floorPrice7dValue$lte]",
+            "name": "filter[floorPrice7dUsd$lte]",
             "required": false,
-            "description": "Less-than or equal filter for \"floorPrice7dValue\"",
+            "description": "Less-than or equal filter for \"floorPrice7dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4460,9 +4460,9 @@
             }
           },
           {
-            "name": "filter[floorPrice7dValue$gt]",
+            "name": "filter[floorPrice7dUsd$gt]",
             "required": false,
-            "description": "Greater-than filter for \"floorPrice7dValue\"",
+            "description": "Greater-than filter for \"floorPrice7dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4471,9 +4471,9 @@
             }
           },
           {
-            "name": "filter[floorPrice7dValue$gte]",
+            "name": "filter[floorPrice7dUsd$gte]",
             "required": false,
-            "description": "Greater-than or equal filter for \"floorPrice7dValue\"",
+            "description": "Greater-than or equal filter for \"floorPrice7dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4597,9 +4597,9 @@
             }
           },
           {
-            "name": "filter[floorPrice30dValue]",
+            "name": "filter[floorPrice30dUsd]",
             "required": false,
-            "description": "Equality filter for \"floorPrice30dValue\"",
+            "description": "Equality filter for \"floorPrice30dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4608,9 +4608,9 @@
             }
           },
           {
-            "name": "filter[floorPrice30dValue$lt]",
+            "name": "filter[floorPrice30dUsd$lt]",
             "required": false,
-            "description": "Less-than filter for \"floorPrice30dValue\"",
+            "description": "Less-than filter for \"floorPrice30dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4619,9 +4619,9 @@
             }
           },
           {
-            "name": "filter[floorPrice30dValue$lte]",
+            "name": "filter[floorPrice30dUsd$lte]",
             "required": false,
-            "description": "Less-than or equal filter for \"floorPrice30dValue\"",
+            "description": "Less-than or equal filter for \"floorPrice30dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4630,9 +4630,9 @@
             }
           },
           {
-            "name": "filter[floorPrice30dValue$gt]",
+            "name": "filter[floorPrice30dUsd$gt]",
             "required": false,
-            "description": "Greater-than filter for \"floorPrice30dValue\"",
+            "description": "Greater-than filter for \"floorPrice30dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -4641,9 +4641,9 @@
             }
           },
           {
-            "name": "filter[floorPrice30dValue$gte]",
+            "name": "filter[floorPrice30dUsd$gte]",
             "required": false,
-            "description": "Greater-than or equal filter for \"floorPrice30dValue\"",
+            "description": "Greater-than or equal filter for \"floorPrice30dUsd\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -8423,7 +8423,7 @@
               "floorPrice": {
                 "type": "number"
               },
-              "floorPrice1hValue": {
+              "floorPrice1hUsd": {
                 "type": "number"
               },
               "floorPrice1hDate": {
@@ -8433,7 +8433,7 @@
               "floorPrice1hChange": {
                 "type": "number"
               },
-              "floorPrice6hValue": {
+              "floorPrice6hUsd": {
                 "type": "number"
               },
               "floorPrice6hDate": {
@@ -8443,7 +8443,7 @@
               "floorPrice6hChange": {
                 "type": "number"
               },
-              "floorPrice24hValue": {
+              "floorPrice24hUsd": {
                 "type": "number"
               },
               "floorPrice24hDate": {
@@ -8453,7 +8453,7 @@
               "floorPrice24hChange": {
                 "type": "number"
               },
-              "floorPrice7dValue": {
+              "floorPrice7dUsd": {
                 "type": "number"
               },
               "floorPrice7dDate": {
@@ -8463,7 +8463,7 @@
               "floorPrice7dChange": {
                 "type": "number"
               },
-              "floorPrice30dValue": {
+              "floorPrice30dUsd": {
                 "type": "number"
               },
               "floorPrice30dDate": {
@@ -8559,7 +8559,7 @@
                   "floorPrice": {
                     "type": "number"
                   },
-                  "floorPrice1hValue": {
+                  "floorPrice1hUsd": {
                     "type": "number"
                   },
                   "floorPrice1hDate": {
@@ -8569,7 +8569,7 @@
                   "floorPrice1hChange": {
                     "type": "number"
                   },
-                  "floorPrice6hValue": {
+                  "floorPrice6hUsd": {
                     "type": "number"
                   },
                   "floorPrice6hDate": {
@@ -8579,7 +8579,7 @@
                   "floorPrice6hChange": {
                     "type": "number"
                   },
-                  "floorPrice24hValue": {
+                  "floorPrice24hUsd": {
                     "type": "number"
                   },
                   "floorPrice24hDate": {
@@ -8589,7 +8589,7 @@
                   "floorPrice24hChange": {
                     "type": "number"
                   },
-                  "floorPrice7dValue": {
+                  "floorPrice7dUsd": {
                     "type": "number"
                   },
                   "floorPrice7dDate": {
@@ -8599,7 +8599,7 @@
                   "floorPrice7dChange": {
                     "type": "number"
                   },
-                  "floorPrice30dValue": {
+                  "floorPrice30dUsd": {
                     "type": "number"
                   },
                   "floorPrice30dDate": {
@@ -8693,7 +8693,7 @@
                   "floorPrice": {
                     "type": "number"
                   },
-                  "floorPrice1hValue": {
+                  "floorPrice1hUsd": {
                     "type": "number"
                   },
                   "floorPrice1hDate": {
@@ -8703,7 +8703,7 @@
                   "floorPrice1hChange": {
                     "type": "number"
                   },
-                  "floorPrice6hValue": {
+                  "floorPrice6hUsd": {
                     "type": "number"
                   },
                   "floorPrice6hDate": {
@@ -8713,7 +8713,7 @@
                   "floorPrice6hChange": {
                     "type": "number"
                   },
-                  "floorPrice24hValue": {
+                  "floorPrice24hUsd": {
                     "type": "number"
                   },
                   "floorPrice24hDate": {
@@ -8723,7 +8723,7 @@
                   "floorPrice24hChange": {
                     "type": "number"
                   },
-                  "floorPrice7dValue": {
+                  "floorPrice7dUsd": {
                     "type": "number"
                   },
                   "floorPrice7dDate": {
@@ -8733,7 +8733,7 @@
                   "floorPrice7dChange": {
                     "type": "number"
                   },
-                  "floorPrice30dValue": {
+                  "floorPrice30dUsd": {
                     "type": "number"
                   },
                   "floorPrice30dDate": {

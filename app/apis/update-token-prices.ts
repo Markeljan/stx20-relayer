@@ -1,11 +1,8 @@
-import { PriceData, Prisma, PrismaClient, Token } from "@prisma/client";
+import { Prisma, PrismaClient, Token } from "@prisma/client";
 import { coinCapApi } from "./api-coincap";
 
 const prisma = new PrismaClient();
 export const updateTokenPrices = async () => {
-  // get priceData from db
-  const dbPriceData = await prisma.priceData.findMany();
-
   const [btcPriceData, stxPriceData] = await Promise.all([
     coinCapApi.fetchPriceData("bitcoin"),
     coinCapApi.fetchPriceData("stacks"),
@@ -18,32 +15,33 @@ export const updateTokenPrices = async () => {
   const calculatePriceInUsd = (priceMicroStx: number) => (priceMicroStx / 10 ** 6) * stxPriceFloat;
   const calculatePriceInSats = (priceInUsd: number) => (priceInUsd / btcPriceFloat) * 10 ** 8;
 
-  // update floorPrice (priceData.minPriceRate) and marketCap token.totalSupply * priceData.minPriceRate for all tokens
+  // update all tokens with a floor price
   const tokensToUpdate = await prisma.token.findMany({
     where: {
-      ticker: {
-        in: dbPriceData.map((pd) => pd.ticker),
+      floorPriceUsd: {
+        gt: 0,
       },
     },
     include: {
       listings: true,
-      priceData: true,
+      priceData: false,
     },
   });
-  // get the amount of active listings for each token
 
   const tokenUpdateTxs: Prisma.TokenUpdateArgs[] = [];
-
-  tokensToUpdate.forEach(async (token) => {
-    const priceData = token.priceData;
+  tokensToUpdate.forEach((token) => {
+    const listings = token.listings;
     const activeListingsCount = token.listings.length;
-    if (priceData) {
-      const floorPrice = priceData.minPriceRate;
+    if (listings && listings.length > 0) {
+      // find the lowest priceRate in the listings
+      const floorPrice = listings.reduce((min, listing) => {
+        return listing.priceRate < min ? listing.priceRate : min;
+      }, Infinity);
       const marketCapFloat = parseFloat(token.totalSupply.toString()) * floorPrice;
       const priceInUsd = calculatePriceInUsd(floorPrice);
       const priceInSats = calculatePriceInSats(priceInUsd);
       const marketCapInUsd = calculatePriceInUsd(marketCapFloat);
-      const historicalPriceData = calculateAllHistoricalPriceData(token, priceData);
+      const historicalPriceData = calculateAllHistoricalPriceData(token, priceInUsd);
 
       tokenUpdateTxs.push({
         where: {
@@ -72,7 +70,7 @@ export const updateTokenPrices = async () => {
     console.log(`Updating ${tokenUpdateTxs.length} token prices...`);
     const result = await prisma.$transaction(tokenUpdateTxs.map((t) => prisma.token.update(t)));
     console.log(`Updated ${result.length} token prices successfully.`);
-    return result;
+    return result.length;
   } catch (error) {
     console.error(`Failed to update token prices.`);
     throw new Error(`Failed to update token prices.`);
@@ -95,58 +93,57 @@ const INTERVAL_MILLISECONDS: Record<HistoricInterval, number> = {
 };
 
 // calculate all historical price data for a token and return an object with the updated values to be deconstructed and added to the token update transaction
-const calculateAllHistoricalPriceData = (token: Token, priceData: PriceData) => {
+const calculateAllHistoricalPriceData = (token: Token, priceInUsd: number) => {
   const now = new Date();
   const result: Record<string, number | Date> = {};
 
   INTERVALS.forEach((interval) => {
-    const historicalDataResults = calculateHistoricalPriceData(token, priceData, interval, now);
-    result[`floorPrice${interval}Change`] = historicalDataResults.change;
+    const historicalDataResults = calculateHistoricalPriceData(token, priceInUsd, interval, now);
+    if (historicalDataResults.change) {
+      result[`floorPrice${interval}Change`] = historicalDataResults.change;
+    }
     if (historicalDataResults.value) {
-      result[`floorPrice${interval}Value`] = historicalDataResults.value;
+      result[`floorPrice${interval}Usd`] = historicalDataResults.value;
     }
     if (historicalDataResults.date) {
       result[`floorPrice${interval}Date`] = historicalDataResults.date;
     }
   });
-
   return result;
 };
 
 type calculateHistoricalPriceDataResult = {
   value?: number;
   date?: Date;
-  change: number;
+  change?: number;
 };
 
-const calculateHistoricalPriceData = (token: Token, priceData: PriceData, interval: HistoricInterval, now: Date) => {
-  const value = token[`floorPrice${interval}Value`];
-  const date = token[`floorPrice${interval}Date`];
-  const change = token[`floorPrice${interval}Change`];
+const calculateHistoricalPriceData = (token: Token, priceInUsd: number, interval: HistoricInterval, now: Date) => {
+  const existingValue = token[`floorPrice${interval}Usd`];
+  const existingDate = token[`floorPrice${interval}Date`];
+  const existingChange = token[`floorPrice${interval}Change`];
 
-  const result: calculateHistoricalPriceDataResult = {
-    change: change,
-  };
+  const result: calculateHistoricalPriceDataResult = {};
 
   // if minPriceRate is 0, return because there is no available market data
-  if (!priceData.minPriceRate) {
+  if (!priceInUsd) {
     return result;
   }
 
   // CASE: initalize
   // if the value is null or undefined or 0, set it to the current floor price. (make sure current floor price is not 0)
-  if (!value || value === 0) {
-    result.value = priceData.minPriceRate;
+  if (!existingValue || existingValue === 0) {
+    result.value = priceInUsd;
     result.date = now;
     result.change = 0;
   } else {
     // CASE: update
     // if the value is not null or undefined, calculate the change and update the value and date if the interval has passed
-    const change = ((priceData.minPriceRate - value) / value) * 100;
+    result.change = ((priceInUsd - existingValue) / existingValue) * 100;
 
     // CASE: interval has passed
-    if (now.getTime() - date.getTime() > INTERVAL_MILLISECONDS[interval]) {
-      result.value = priceData.minPriceRate;
+    if (now.getTime() - existingDate.getTime() > INTERVAL_MILLISECONDS[interval]) {
+      result.value = priceInUsd;
       result.date = now;
     }
   }

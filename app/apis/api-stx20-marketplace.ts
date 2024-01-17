@@ -35,7 +35,12 @@ class Stx20MarketplaceApi {
   async fetchAllListings({ pendingTx }: { pendingTx: boolean }): Promise<ListingsApiResponse> {
     const response = await fetch(`${this.basePath}sell-requests/search?sort=created_asc&limit=10000`, {
       method: "POST",
-      body: JSON.stringify({ pendingTx }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        pendingTx,
+      }),
     });
     const json = (await response.json()) as ListingsApiResponse;
     return json;

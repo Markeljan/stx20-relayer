@@ -11,7 +11,8 @@ const main = async () => {
   // update stx20 listings, tokens, and marketplace token table
   await updateTokens();
   await updateListings();
-  await updatePriceData();
+  // skipping, using active listings and manually setting floor price
+  //await updatePriceData();
   await updateTokenPrices();
 };
 

@@ -4,14 +4,18 @@ import { stx20MarketplaceApi } from "./api-stx20-marketplace";
 const prisma = new PrismaClient();
 
 export const updateListings = async () => {
-  const { data: listings } = await stx20MarketplaceApi.fetchAllListings({ pendingTx: true });
+  const { data: listings } = await stx20MarketplaceApi.fetchAllListings({ pendingTx: false });
   console.log(`Fetched ${listings.length} listings.`);
 
   // first, get all listings from the db
   const dbListings = await prisma.listing.findMany();
 
+  console.log(`Found ${dbListings.length} listings in the database.`);
+
   // delete listings from db that are not in the new listings
   const listingsToDelete = dbListings.filter((dbListing) => !listings.find((listing) => dbListing.id === listing._id));
+
+  console.log(`Found ${listingsToDelete.length} listings to delete.`);
 
   if (listingsToDelete.length > 0) {
     console.log(`Deleting ${listingsToDelete.length} listings...`);
