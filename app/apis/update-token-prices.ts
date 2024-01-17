@@ -31,7 +31,7 @@ export const updateTokenPrices = async () => {
   const tokenUpdateTxs: Prisma.TokenUpdateArgs[] = [];
   tokensToUpdate.forEach((token) => {
     const listings = token.listings;
-    const activeListingsCount = token.listings.length;
+    const activeListingsCount = listings.length;
     if (listings && listings.length > 0) {
       // find the lowest priceRate in the listings
       const floorPrice = listings.reduce((min, listing) => {
