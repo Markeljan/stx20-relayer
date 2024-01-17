@@ -12,7 +12,7 @@ const { ZenStackMiddleware } = require("@zenstackhq/server/express");
 //////////////////////////////////////////////
 /////////////// CONFIG ///////////////////////
 //////////////////////////////////////////////
-const APP_DOMAIN = "https://stx20api.vercel.app";
+const APP_DOMAIN = "https://stx20-api.com";
 const app = express();
 app.use(express.json({ limit: "2mb" }));
 app.use(cors());
