@@ -15,12 +15,25 @@ export const updateTokenPrices = async () => {
   const calculatePriceInUsd = (priceMicroStx: number) => (priceMicroStx / 10 ** 6) * stxPriceFloat;
   const calculatePriceInSats = (priceInUsd: number) => (priceInUsd / btcPriceFloat) * 10 ** 8;
 
-  // update all tokens with a floor price
+  // update all tokens with a floor price or in the listings table
   const tokensToUpdate = await prisma.token.findMany({
     where: {
-      floorPriceUsd: {
-        gt: 0,
-      },
+      OR: [
+        {
+          floorPrice: {
+            gt: 0,
+          },
+        },
+        {
+          listings: {
+            some: {
+              priceRate: {
+                gt: 0,
+              },
+            },
+          },
+        },
+      ],
     },
     include: {
       listings: true,
@@ -29,7 +42,8 @@ export const updateTokenPrices = async () => {
   });
 
   const tokenUpdateTxs: Prisma.TokenUpdateArgs[] = [];
-  tokensToUpdate.forEach((token) => {
+
+  for (const token of tokensToUpdate) {
     const listings = token.listings;
     const activeListingsCount = listings.length;
     if (listings && listings.length > 0) {
@@ -43,7 +57,7 @@ export const updateTokenPrices = async () => {
       const marketCapInUsd = calculatePriceInUsd(marketCapFloat);
       const historicalPriceData = calculateAllHistoricalPriceData(token, priceInUsd);
 
-      tokenUpdateTxs.push({
+      await tokenUpdateTxs.push({
         where: {
           ticker: token.ticker,
         },
@@ -58,7 +72,7 @@ export const updateTokenPrices = async () => {
         },
       });
     }
-  });
+  }
 
   if (tokenUpdateTxs.length === 0) {
     console.log("No tokens need price updates.");

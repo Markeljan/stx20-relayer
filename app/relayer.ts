@@ -1,5 +1,4 @@
 import { connectWebSocketClient } from "@stacks/blockchain-api-client";
-import { coinCapApi } from "./apis/api-coincap";
 import { updateListings } from "./apis/update-listings";
 import { updatePriceData } from "./apis/update-price-data";
 import { updateTokenPrices } from "./apis/update-token-prices";
