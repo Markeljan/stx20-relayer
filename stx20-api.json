@@ -49,6 +49,17 @@
             "$ref": "#/components/parameters/page-limit"
           },
           {
+            "name": "filter[id]",
+            "required": false,
+            "description": "Id filter",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
             "name": "filter[priceUsd]",
             "required": false,
             "description": "Equality filter for \"priceUsd\"",
@@ -7049,6 +7060,116 @@
             }
           },
           {
+            "name": "filter[usdValue]",
+            "required": false,
+            "description": "Equality filter for \"usdValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[usdValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"usdValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[usdValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"usdValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[usdValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"usdValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[usdValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"usdValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[btcValue]",
+            "required": false,
+            "description": "Equality filter for \"btcValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[btcValue$lt]",
+            "required": false,
+            "description": "Less-than filter for \"btcValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[btcValue$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"btcValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[btcValue$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"btcValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[btcValue$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"btcValue\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
             "name": "filter[marketFeeValue]",
             "required": false,
             "description": "Equality filter for \"marketFeeValue\"",
@@ -7580,6 +7701,116 @@
             "name": "filter[priceRate$gte]",
             "required": false,
             "description": "Greater-than or equal filter for \"priceRate\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[priceRateUsd]",
+            "required": false,
+            "description": "Equality filter for \"priceRateUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[priceRateUsd$lt]",
+            "required": false,
+            "description": "Less-than filter for \"priceRateUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[priceRateUsd$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"priceRateUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[priceRateUsd$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"priceRateUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[priceRateUsd$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"priceRateUsd\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[priceRateSats]",
+            "required": false,
+            "description": "Equality filter for \"priceRateSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[priceRateSats$lt]",
+            "required": false,
+            "description": "Less-than filter for \"priceRateSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[priceRateSats$lte]",
+            "required": false,
+            "description": "Less-than or equal filter for \"priceRateSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[priceRateSats$gt]",
+            "required": false,
+            "description": "Greater-than filter for \"priceRateSats\"",
+            "in": "query",
+            "style": "form",
+            "explode": false,
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "filter[priceRateSats$gte]",
+            "required": false,
+            "description": "Greater-than or equal filter for \"priceRateSats\"",
             "in": "query",
             "style": "form",
             "explode": false,
@@ -9469,6 +9700,9 @@
           "attributes": {
             "type": "object",
             "properties": {
+              "ticker": {
+                "type": "string"
+              },
               "priceUsd": {
                 "type": "number"
               },
@@ -9499,24 +9733,24 @@
             "type": "object",
             "description": "The \"PriceChange\" model",
             "required": [
-              "id",
               "type",
               "attributes"
             ],
             "properties": {
-              "id": {
-                "type": "string"
-              },
               "type": {
                 "type": "string"
               },
               "attributes": {
                 "type": "object",
                 "required": [
+                  "ticker",
                   "priceUsd",
                   "updateDate"
                 ],
                 "properties": {
+                  "ticker": {
+                    "type": "string"
+                  },
                   "priceUsd": {
                     "type": "number"
                   },
@@ -9566,6 +9800,9 @@
               "attributes": {
                 "type": "object",
                 "properties": {
+                  "ticker": {
+                    "type": "string"
+                  },
                   "priceUsd": {
                     "type": "number"
                   },
@@ -10341,6 +10578,12 @@
               "stxValue": {
                 "type": "string"
               },
+              "usdValue": {
+                "type": "number"
+              },
+              "btcValue": {
+                "type": "number"
+              },
               "marketFeeValue": {
                 "type": "string"
               },
@@ -10369,6 +10612,12 @@
                 "type": "boolean"
               },
               "priceRate": {
+                "type": "number"
+              },
+              "priceRateUsd": {
+                "type": "number"
+              },
+              "priceRateSats": {
                 "type": "number"
               },
               "submitted": {
@@ -10437,6 +10686,8 @@
                   "ticker",
                   "value",
                   "stxValue",
+                  "usdValue",
+                  "btcValue",
                   "marketFeeValue",
                   "gasFeeValueBuyer",
                   "gasFeeValueSeller",
@@ -10447,6 +10698,8 @@
                   "stxSentConfirmed",
                   "tokenSentConfirmed",
                   "priceRate",
+                  "priceRateUsd",
+                  "priceRateSats",
                   "submitted",
                   "pendingPurchaseTx",
                   "v",
@@ -10468,6 +10721,12 @@
                   },
                   "stxValue": {
                     "type": "string"
+                  },
+                  "usdValue": {
+                    "type": "number"
+                  },
+                  "btcValue": {
+                    "type": "number"
                   },
                   "marketFeeValue": {
                     "type": "string"
@@ -10497,6 +10756,12 @@
                     "type": "boolean"
                   },
                   "priceRate": {
+                    "type": "number"
+                  },
+                  "priceRateUsd": {
+                    "type": "number"
+                  },
+                  "priceRateSats": {
                     "type": "number"
                   },
                   "submitted": {
@@ -10581,6 +10846,12 @@
                   "stxValue": {
                     "type": "string"
                   },
+                  "usdValue": {
+                    "type": "number"
+                  },
+                  "btcValue": {
+                    "type": "number"
+                  },
                   "marketFeeValue": {
                     "type": "string"
                   },
@@ -10609,6 +10880,12 @@
                     "type": "boolean"
                   },
                   "priceRate": {
+                    "type": "number"
+                  },
+                  "priceRateUsd": {
+                    "type": "number"
+                  },
+                  "priceRateSats": {
                     "type": "number"
                   },
                   "submitted": {

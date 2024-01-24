@@ -15,11 +15,13 @@ generator client {
 }
 
 model PriceChange {
-    ticker String @id()
+    id Int @id() @default(autoincrement())
+    ticker String
     priceUsd Float
     updateDate DateTime
     token Token @relation(fields: [ticker], references: [ticker])
 
+    @@unique([ticker, updateDate])
     @@index([updateDate])
 }
 
@@ -63,6 +65,8 @@ model Listing {
     ticker String
     value String
     stxValue String
+    usdValue Float
+    btcValue Float
     marketFeeValue String
     gasFeeValueBuyer String
     gasFeeValueSeller String
@@ -73,6 +77,8 @@ model Listing {
     stxSentConfirmed Boolean
     tokenSentConfirmed Boolean
     priceRate Float
+    priceRateUsd Float
+    priceRateSats Float
     submitted Boolean
     pendingPurchaseTx String[]
     v Int

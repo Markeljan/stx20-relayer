@@ -1,19 +1,11 @@
 import { PriceChange, Prisma, PrismaClient, Token } from "@prisma/client";
+
+import { calculatePriceInSats, calculatePriceInUsd } from "../utils/conversions";
 import { coinCapApi } from "./api-coincap";
 
 const prisma = new PrismaClient();
 export const updateTokenPrices = async () => {
-  const [btcPriceData, stxPriceData] = await Promise.all([
-    coinCapApi.fetchPriceData("bitcoin"),
-    coinCapApi.fetchPriceData("stacks"),
-  ]);
-
-  const btcPriceFloat = parseFloat(btcPriceData.data.priceUsd);
-  const stxPriceFloat = parseFloat(stxPriceData.data.priceUsd);
-
-  // convert from micro-stx to stx ( / 10^6) then to usd ( * stxPriceFloat)
-  const calculatePriceInUsd = (priceMicroStx: number) => (priceMicroStx / 10 ** 6) * stxPriceFloat;
-  const calculatePriceInSats = (priceInUsd: number) => (priceInUsd / btcPriceFloat) * 10 ** 8;
+  const { btcPriceFloat, stxPriceFloat } = await coinCapApi.fetchFloatBtcAndStxPrices();
 
   // update all tokens with a floor price or in the listings table
   const tokensToUpdate = await prisma.token.findMany({
@@ -55,9 +47,18 @@ export const updateTokenPrices = async () => {
         return listing.priceRate < min ? listing.priceRate : min;
       }, Infinity);
       const marketCapFloat = parseFloat(token.totalSupply.toString()) * floorPriceStx;
-      const priceInUsd = calculatePriceInUsd(floorPriceStx);
-      const priceInSats = calculatePriceInSats(priceInUsd);
-      const marketCapInUsd = calculatePriceInUsd(marketCapFloat);
+      const priceInUsd = calculatePriceInUsd({
+        priceMicroStx: floorPriceStx,
+        stxPriceFloat: stxPriceFloat,
+      });
+      const priceInSats = calculatePriceInSats({
+        priceInUsd: priceInUsd,
+        btcPriceFloat: btcPriceFloat,
+      });
+      const marketCapInUsd = calculatePriceInUsd({
+        priceMicroStx: marketCapFloat,
+        stxPriceFloat: stxPriceFloat,
+      });
       const historicalPriceData = calculateAllHistoricalPriceData(token, priceInUsd);
 
       await tokenUpdateTxs.push({
@@ -104,8 +105,8 @@ export const updateTokenPrices = async () => {
     console.log(`Updated ${result.length} token prices successfully.`);
     return result.length;
   } catch (error) {
-    console.error(`Failed to update token prices.`);
-    throw new Error(`Failed to update token prices.`);
+    console.error(`Failed to update token prices. ${error}`);
+    throw new Error(`Failed to update token prices. ${error}`);
   }
 };
 

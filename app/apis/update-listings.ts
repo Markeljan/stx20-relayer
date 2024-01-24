@@ -1,10 +1,15 @@
 import { Prisma, PrismaClient } from "@prisma/client";
+import { calculatePriceInBtc, calculatePriceInUsd } from "../utils/conversions";
+import { coinCapApi } from "./api-coincap";
 import { stx20MarketplaceApi } from "./api-stx20-marketplace";
 
 const prisma = new PrismaClient();
 
 export const updateListings = async () => {
   const { data: listings } = await stx20MarketplaceApi.fetchAllListings({ pendingTx: false });
+
+  const { btcPriceFloat, stxPriceFloat } = await coinCapApi.fetchFloatBtcAndStxPrices();
+
   console.log(`Fetched ${listings.length} listings.`);
 
   // first, get all listings from the db
@@ -60,6 +65,22 @@ export const updateListings = async () => {
 
   // then, add them to the upsert array and add the tickers to priceDataToFetch
   listingsToUpdate.forEach((listing) => {
+    const usdValue = calculatePriceInUsd({
+      priceMicroStx: Number(listing.stxValue),
+      stxPriceFloat: stxPriceFloat,
+    });
+    const btcValue = calculatePriceInBtc({
+      priceInUsd: usdValue,
+      btcPriceFloat: btcPriceFloat,
+    });
+    const priceRateUsd = calculatePriceInUsd({
+      priceMicroStx: Number(listing.priceRate),
+      stxPriceFloat: stxPriceFloat,
+    });
+    const priceRateSats = calculatePriceInBtc({
+      priceInUsd: priceRateUsd,
+      btcPriceFloat: btcPriceFloat,
+    });
     listingUpserts.push({
       where: {
         id: listing._id,
@@ -71,6 +92,8 @@ export const updateListings = async () => {
         ticker: listing.ticker,
         value: listing.value,
         stxValue: listing.stxValue,
+        usdValue: usdValue,
+        btcValue: btcValue,
         marketFeeValue: listing.marketFeeValue,
         gasFeeValueBuyer: listing.gasFeeValueBuyer,
         gasFeeValueSeller: listing.gasFeeValueSeller,
@@ -81,6 +104,8 @@ export const updateListings = async () => {
         stxSentConfirmed: listing.stxSentConfirmed,
         tokenSentConfirmed: listing.tokenSentConfirmed,
         priceRate: listing.priceRate,
+        priceRateUsd: priceRateUsd,
+        priceRateSats: priceRateSats,
         submitted: listing.submitted,
         pendingPurchaseTx: listing.pendingPurchaseTx,
         v: listing.__v,

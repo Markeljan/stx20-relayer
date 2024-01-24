@@ -34,6 +34,18 @@ class CoincapApi {
     const json = (await response.json()) as CoinCapResponse;
     return json;
   }
+
+  // fetch bitcoin and stx price at once
+  async fetchFloatBtcAndStxPrices(): Promise<{ btcPriceFloat: number; stxPriceFloat: number }> {
+    const [btcPriceData, stxPriceData] = await Promise.all([
+      this.fetchPriceData("bitcoin"),
+      this.fetchPriceData("stacks"),
+    ]);
+    const btcPriceFloat = parseFloat(btcPriceData.data.priceUsd);
+    const stxPriceFloat = parseFloat(stxPriceData.data.priceUsd);
+
+    return { btcPriceFloat, stxPriceFloat };
+  }
 }
 
 export const coinCapApi = new CoincapApi();
