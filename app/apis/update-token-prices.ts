@@ -1,4 +1,4 @@
-import { Prisma, PrismaClient, Token } from "@prisma/client";
+import { PriceChange, Prisma, PrismaClient, Token } from "@prisma/client";
 import { coinCapApi } from "./api-coincap";
 
 const prisma = new PrismaClient();
@@ -20,7 +20,7 @@ export const updateTokenPrices = async () => {
     where: {
       OR: [
         {
-          floorPrice: {
+          floorPriceUsd: {
             gt: 0,
           },
         },
@@ -37,22 +37,25 @@ export const updateTokenPrices = async () => {
     },
     include: {
       listings: true,
+      priceChanges: true,
       priceData: false,
     },
   });
 
   const tokenUpdateTxs: Prisma.TokenUpdateArgs[] = [];
 
+  const now = new Date();
+
   for (const token of tokensToUpdate) {
     const listings = token.listings;
     const activeListingsCount = listings.length;
     if (listings && listings.length > 0) {
       // find the lowest priceRate in the listings
-      const floorPrice = listings.reduce((min, listing) => {
+      const floorPriceStx = listings.reduce((min, listing) => {
         return listing.priceRate < min ? listing.priceRate : min;
       }, Infinity);
-      const marketCapFloat = parseFloat(token.totalSupply.toString()) * floorPrice;
-      const priceInUsd = calculatePriceInUsd(floorPrice);
+      const marketCapFloat = parseFloat(token.totalSupply.toString()) * floorPriceStx;
+      const priceInUsd = calculatePriceInUsd(floorPriceStx);
       const priceInSats = calculatePriceInSats(priceInUsd);
       const marketCapInUsd = calculatePriceInUsd(marketCapFloat);
       const historicalPriceData = calculateAllHistoricalPriceData(token, priceInUsd);
@@ -62,13 +65,28 @@ export const updateTokenPrices = async () => {
           ticker: token.ticker,
         },
         data: {
-          floorPrice: floorPrice,
+          floorPriceStx: floorPriceStx,
           floorPriceUsd: priceInUsd,
           floorPriceSats: priceInSats,
           marketCap: marketCapFloat,
           marketCapUsd: marketCapInUsd,
           activeListingsCount: activeListingsCount,
-          ...historicalPriceData,
+          floorPriceUsd1hChange: historicalPriceData["1h"],
+          floorPriceUsd6hChange: historicalPriceData["6h"],
+          floorPriceUsd24hChange: historicalPriceData["24h"],
+          floorPriceUsd7dChange: historicalPriceData["7d"],
+          floorPriceUsd30dChange: historicalPriceData["30d"],
+          priceChanges: {
+            create: {
+              priceUsd: priceInUsd,
+              updateDate: now,
+            },
+          },
+        },
+        include: {
+          listings: true,
+          priceChanges: true,
+          priceData: false,
         },
       });
     }
@@ -91,8 +109,6 @@ export const updateTokenPrices = async () => {
   }
 };
 
-// helper function to calculate historical price data.  Updates all intervals change values, only updates the actual interval value if the time has passed.  Reset intervalDate if the interval has passed.
-
 type HistoricInterval = "1h" | "6h" | "24h" | "7d" | "30d";
 
 const INTERVALS: HistoricInterval[] = ["1h", "6h", "24h", "7d", "30d"];
@@ -106,61 +122,31 @@ const INTERVAL_MILLISECONDS: Record<HistoricInterval, number> = {
   "30d": 30 * 24 * 60 * 60 * 1000,
 };
 
-// calculate all historical price data for a token and return an object with the updated values to be deconstructed and added to the token update transaction
-const calculateAllHistoricalPriceData = (token: Token, priceInUsd: number) => {
+// calculate all historical price data for a token and return an object containing all priceChanges 1h, 6h, 24h, 7d, 30d
+const calculateAllHistoricalPriceData = (token: Token & { priceChanges: PriceChange[] }, currentPrice: number) => {
+  const priceChanges = token.priceChanges ?? [];
   const now = new Date();
-  const result: Record<string, number | Date> = {};
+  const historicalPriceData: Record<HistoricInterval, number> = {
+    "1h": currentPrice,
+    "6h": currentPrice,
+    "24h": currentPrice,
+    "7d": currentPrice,
+    "30d": currentPrice,
+  };
 
-  INTERVALS.forEach((interval) => {
-    const historicalDataResults = calculateHistoricalPriceData(token, priceInUsd, interval, now);
-    if (historicalDataResults.change) {
-      result[`floorPrice${interval}Change`] = historicalDataResults.change;
-    }
-    if (historicalDataResults.value) {
-      result[`floorPrice${interval}Usd`] = historicalDataResults.value;
-    }
-    if (historicalDataResults.date) {
-      result[`floorPrice${interval}Date`] = historicalDataResults.date;
-    }
-  });
-  return result;
-};
+  if (priceChanges && priceChanges.length > 0) {
+    for (const interval of INTERVALS) {
+      const intervalMilliseconds = INTERVAL_MILLISECONDS[interval];
+      const intervalAgo = new Date(now.getTime() - intervalMilliseconds);
+      const closestPriceChange = priceChanges.reduce((closest, priceChange) => {
+        const closestTimeDiff = Math.abs(closest.updateDate.getTime() - intervalAgo.getTime());
+        const priceChangeTimeDiff = Math.abs(priceChange.updateDate.getTime() - intervalAgo.getTime());
+        return priceChangeTimeDiff < closestTimeDiff ? priceChange : closest;
+      }, priceChanges[0]);
 
-type calculateHistoricalPriceDataResult = {
-  value?: number;
-  date?: Date;
-  change?: number;
-};
-
-const calculateHistoricalPriceData = (token: Token, priceInUsd: number, interval: HistoricInterval, now: Date) => {
-  const existingValue = token[`floorPrice${interval}Usd`];
-  const existingDate = token[`floorPrice${interval}Date`];
-  const existingChange = token[`floorPrice${interval}Change`];
-
-  const result: calculateHistoricalPriceDataResult = {};
-
-  // if minPriceRate is 0, return because there is no available market data
-  if (!priceInUsd) {
-    return result;
-  }
-
-  // CASE: initalize
-  // if the value is null or undefined or 0, set it to the current floor price. (make sure current floor price is not 0)
-  if (!existingValue || existingValue === 0) {
-    result.value = priceInUsd;
-    result.date = now;
-    result.change = 0;
-  } else {
-    // CASE: update
-    // if the value is not null or undefined, calculate the change and update the value and date if the interval has passed
-    result.change = ((priceInUsd - existingValue) / existingValue) * 100;
-
-    // CASE: interval has passed
-    if (now.getTime() - existingDate.getTime() > INTERVAL_MILLISECONDS[interval]) {
-      result.value = priceInUsd;
-      result.date = now;
+      historicalPriceData[interval] = closestPriceChange.priceUsd;
     }
   }
 
-  return result;
+  return historicalPriceData;
 };

@@ -14,6 +14,15 @@ generator client {
     binaryTargets = ["native", "rhel-openssl-1.0.x"]
 }
 
+model PriceChange {
+    ticker String @id()
+    priceUsd Float
+    updateDate DateTime
+    token Token @relation(fields: [ticker], references: [ticker])
+
+    @@index([updateDate])
+}
+
 model Token {
     ticker String @id()
     totalSupply BigInt
@@ -21,28 +30,19 @@ model Token {
     creationDate DateTime
     supplyLeftToMint BigInt
     percentageMinted Float
-    floorPrice Float @default(0)
-    floorPrice1hUsd Float @default(0)
-    floorPrice1hDate DateTime @default(now())
-    floorPrice1hChange Float @default(0)
-    floorPrice6hUsd Float @default(0)
-    floorPrice6hDate DateTime @default(now())
-    floorPrice6hChange Float @default(0)
-    floorPrice24hUsd Float @default(0)
-    floorPrice24hDate DateTime @default(now())
-    floorPrice24hChange Float @default(0)
-    floorPrice7dUsd Float @default(0)
-    floorPrice7dDate DateTime @default(now())
-    floorPrice7dChange Float @default(0)
-    floorPrice30dUsd Float @default(0)
-    floorPrice30dDate DateTime @default(now())
-    floorPrice30dChange Float @default(0)
-    floorPriceSats Float @default(0)
+    floorPriceStx Float @default(0)
     floorPriceUsd Float @default(0)
+    floorPriceSats Float @default(0)
+    floorPriceUsd1hChange Float @default(0)
+    floorPriceUsd6hChange Float @default(0)
+    floorPriceUsd24hChange Float @default(0)
+    floorPriceUsd7dChange Float @default(0)
+    floorPriceUsd30dChange Float @default(0)
     marketCap Float @default(0)
     marketCapUsd Float @default(0)
     activeListingsCount Int @default(0)
     priceData PriceData?
+    priceChanges PriceChange[]
     listings Listing[]
 }
 
