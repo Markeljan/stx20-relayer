@@ -59,7 +59,7 @@ export const updateTokenPrices = async () => {
         priceMicroStx: marketCapFloat,
         stxPriceFloat: stxPriceFloat,
       });
-      const historicalPriceData = calculateAllHistoricalPriceData(token, priceInUsd);
+      const historicalPriceData = calculateAllHistoricalPriceChanges(token, priceInUsd);
 
       await tokenUpdateTxs.push({
         where: {
@@ -123,31 +123,36 @@ const INTERVAL_MILLISECONDS: Record<HistoricInterval, number> = {
   "30d": 30 * 24 * 60 * 60 * 1000,
 };
 
-// calculate all historical price data for a token and return an object containing all priceChanges 1h, 6h, 24h, 7d, 30d
-const calculateAllHistoricalPriceData = (token: Token & { priceChanges: PriceChange[] }, currentPrice: number) => {
+// calculate all historical price change percentages for a token and return an object containing all priceChanges 1h, 6h, 24h, 7d, 30d
+const calculateAllHistoricalPriceChanges = (token: Token & { priceChanges: PriceChange[] }, currentPrice: number) => {
   const priceChanges = token.priceChanges ?? [];
   const now = new Date();
-  const historicalPriceData: Record<HistoricInterval, number> = {
-    "1h": currentPrice,
-    "6h": currentPrice,
-    "24h": currentPrice,
-    "7d": currentPrice,
-    "30d": currentPrice,
+  const historicalPriceChanges: Record<HistoricInterval, number> = {
+    "1h": 0,
+    "6h": 0,
+    "24h": 0,
+    "7d": 0,
+    "30d": 0,
   };
 
-  if (priceChanges && priceChanges.length > 0) {
-    for (const interval of INTERVALS) {
-      const intervalMilliseconds = INTERVAL_MILLISECONDS[interval];
-      const intervalAgo = new Date(now.getTime() - intervalMilliseconds);
-      const closestPriceChange = priceChanges.reduce((closest, priceChange) => {
-        const closestTimeDiff = Math.abs(closest.updateDate.getTime() - intervalAgo.getTime());
-        const priceChangeTimeDiff = Math.abs(priceChange.updateDate.getTime() - intervalAgo.getTime());
-        return priceChangeTimeDiff < closestTimeDiff ? priceChange : closest;
-      }, priceChanges[0]);
+  for (const interval of INTERVALS) {
+    const intervalMilliseconds = INTERVAL_MILLISECONDS[interval];
+    const intervalAgo = new Date(now.getTime() - intervalMilliseconds);
+    // find the closest price change to the intervalAgo date (if the time has passed, we compare the oldest price change to the current price)
+    const closestPriceChange = priceChanges.reduce((closest, priceChange) => {
+      const closestDate = new Date(closest.updateDate);
+      const priceChangeDate = new Date(priceChange.updateDate);
+      if (priceChangeDate <= intervalAgo && priceChangeDate > closestDate) {
+        return priceChange;
+      } else {
+        return closest;
+      }
+    }, priceChanges[0]);
 
-      historicalPriceData[interval] = closestPriceChange.priceUsd;
-    }
+    // calculate the percentage change between the closest price change to the interval and the current price
+    const percentageChange = ((currentPrice - closestPriceChange.priceUsd) / currentPrice) * 100;
+    historicalPriceChanges[interval] = percentageChange;
   }
 
-  return historicalPriceData;
+  return historicalPriceChanges;
 };
