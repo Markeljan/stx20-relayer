@@ -23,9 +23,6 @@ const app: Express = express();
 // dynamically set cors options based on the api key.  Public api key is only allowed to be called from the app.bitflow.finance domain
 const dynamicCors = (req: Request, callback: any) => {
   const apiKey = req.headers["x-api-key"] as string;
-  console.log("received request with api key: ", apiKey);
-  console.log("Comparing to dev api key: ", DEV_API_KEY);
-  console.log("Comparing to bitflow api key: ", BITFLOW_API_KEY);
   let corsOptions;
 
   if (apiKey === DEV_API_KEY) {
@@ -100,6 +97,7 @@ const removeNulls = (obj: any) => {
 // load it from a public location
 const swaggerOptions = { customCssUrl: "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.3.0/swagger-ui.min.css" };
 
+app.options("/api/*", cors()); // Enable preflight requests for all routes
 // Set up the middleware
 app.use(express.json({ limit: "2mb" }));
 app.use(cors(dynamicCors));
