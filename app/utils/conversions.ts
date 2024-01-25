@@ -14,7 +14,7 @@ export const calculatePriceInSats = ({ priceInUsd, btcPriceFloat }: { priceInUsd
   if (priceInUsd === 0) {
     return 0;
   }
-  return priceInUsd / btcPriceFloat;
+  return (priceInUsd / btcPriceFloat) * 10 ** 8;
 };
 export const calculatePriceInBtc = ({ priceInUsd, btcPriceFloat }: { priceInUsd: number; btcPriceFloat: number }) => {
   if (priceInUsd === 0) {
