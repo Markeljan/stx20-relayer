@@ -1,4 +1,4 @@
-import express, { Application, NextFunction, Request, Response } from "express";
+import express, { Express, NextFunction, Request, Response } from "express";
 
 import makeHandler from "@zenstackhq/server/api/rest";
 
@@ -18,11 +18,14 @@ const DEV_API_KEY = process.env.DEV_API_KEY;
 
 const prisma = new PrismaClient();
 
-const app: Application = express();
+const app: Express = express();
 
 // dynamically set cors options based on the api key.  Public api key is only allowed to be called from the app.bitflow.finance domain
 const dynamicCors = (req: Request, callback: any) => {
   const apiKey = req.headers["x-api-key"] as string;
+  console.log("received request with api key: ", apiKey);
+  console.log("Comparing to dev api key: ", DEV_API_KEY);
+  console.log("Comparing to bitflow api key: ", BITFLOW_API_KEY);
   let corsOptions;
 
   if (apiKey === DEV_API_KEY) {
