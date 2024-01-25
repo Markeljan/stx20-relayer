@@ -6,7 +6,7 @@ export const updateBalances = async () => {
   // get unique addresses TBD where to get them from
   const uniqueAddresses = new Set<string>();
 
-  // fetch balances form api
+  // fetch balances from api
   const { data: balances } = await stx20Api.fetchManyBalances(Array.from(uniqueAddresses));
 
   // prepare balances for upsert

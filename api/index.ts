@@ -15,6 +15,7 @@ const { ZenStackMiddleware } = require("@zenstackhq/server/express");
 const APP_DOMAIN = "https://stx20-api.com";
 const BITFLOW_API_KEY = process.env.BITFLOW_API_KEY;
 const DEV_API_KEY = process.env.DEV_API_KEY;
+const TEMP_API_KEY = "temp-key-123";
 
 const prisma = new PrismaClient();
 
@@ -25,7 +26,8 @@ const dynamicCors = (req: Request, callback: any) => {
   const apiKey = req.headers["x-api-key"] as string;
   let corsOptions;
 
-  if (apiKey === DEV_API_KEY) {
+  // TODO: remove this temporary key
+  if (apiKey === DEV_API_KEY || apiKey === TEMP_API_KEY) {
     corsOptions = { origin: true }; // Allow any origin for private API key
   } else if (apiKey === BITFLOW_API_KEY) {
     corsOptions = { origin: "https://app.bitflow.finance" }; // Allow only specific origin for public API key
@@ -40,7 +42,8 @@ const apiKeyAuthMiddleware = (req: Request, res: Response, next: NextFunction) =
   const apiKey = req.headers["x-api-key"] as string;
   if (!apiKey) {
     return res.status(401).send({ error: "No API key provided" });
-  } else if (apiKey !== BITFLOW_API_KEY && apiKey !== DEV_API_KEY) {
+    // TODO: remove this temporary key
+  } else if (apiKey !== BITFLOW_API_KEY && apiKey !== DEV_API_KEY && apiKey !== TEMP_API_KEY) {
     return res.status(401).send({ error: "Invalid API key" });
   }
   // If valid, proceed to the next middleware
