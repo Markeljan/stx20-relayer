@@ -55,8 +55,7 @@ export const updateListings = async () => {
             dbListing.stxSentConfirmed === l.stxSentConfirmed ||
             dbListing.tokenSentConfirmed === l.tokenSentConfirmed ||
             dbListing.submitted === l.submitted ||
-            dbListing.isBuried === l.isBuried ||
-            dbListing.lastReincarnate === l.lastReincarnate)
+            dbListing.isBuried === l.isBuried)
       )
   );
 
@@ -90,8 +89,8 @@ export const updateListings = async () => {
         creatorAddress: listing.creatorAddress,
         creationDate: listing.creationDate,
         ticker: listing.ticker,
-        value: listing.value,
-        stxValue: listing.stxValue,
+        value: Number(listing.value),
+        stxValue: Number(listing.stxValue),
         usdValue: usdValue,
         btcValue: btcValue,
         marketFeeValue: listing.marketFeeValue,

@@ -1,6 +1,27 @@
-import { Listing } from "@prisma/client";
-
-type MarketplaceListing = Omit<Listing, "id, v"> & { _id: string; __v: number };
+type MarketplaceListing = {
+  _id: string;
+  creatorAddress: string;
+  creationDate: string;
+  ticker: string;
+  value: string;
+  stxValue: string;
+  marketFeeValue: string;
+  gasFeeValueBuyer: string;
+  gasFeeValueSeller: string;
+  totalStxValue: string;
+  beneficiary: string;
+  requestStatus: string;
+  tokenReceiverMarketplaceAddress: string;
+  stxSentConfirmed: boolean;
+  tokenSentConfirmed: boolean;
+  priceRate: number;
+  submitted: boolean;
+  pendingPurchaseTx: string[];
+  __v: number;
+  creationTxId: string;
+  isBuried?: boolean;
+  lastReincarnate?: string;
+};
 
 type Pagination = {
   page: number;

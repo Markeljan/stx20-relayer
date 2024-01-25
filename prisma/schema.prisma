@@ -63,8 +63,8 @@ model Listing {
     creatorAddress String
     creationDate DateTime
     ticker String
-    value String
-    stxValue String
+    value Float
+    stxValue Float
     usdValue Float
     btcValue Float
     marketFeeValue String

@@ -6935,62 +6935,51 @@
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           },
           {
-            "name": "filter[value$contains]",
+            "name": "filter[value$lt]",
             "required": false,
-            "description": "String contains filter for \"value\"",
+            "description": "Less-than filter for \"value\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           },
           {
-            "name": "filter[value$icontains]",
+            "name": "filter[value$lte]",
             "required": false,
-            "description": "String case-insensitive contains filter for \"value\"",
+            "description": "Less-than or equal filter for \"value\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           },
           {
-            "name": "filter[value$search]",
+            "name": "filter[value$gt]",
             "required": false,
-            "description": "String full-text search filter for \"value\"",
+            "description": "Greater-than filter for \"value\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           },
           {
-            "name": "filter[value$startsWith]",
+            "name": "filter[value$gte]",
             "required": false,
-            "description": "String startsWith filter for \"value\"",
+            "description": "Greater-than or equal filter for \"value\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[value$endsWith]",
-            "required": false,
-            "description": "String endsWith filter for \"value\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
+              "type": "number"
             }
           },
           {
@@ -7001,62 +6990,51 @@
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           },
           {
-            "name": "filter[stxValue$contains]",
+            "name": "filter[stxValue$lt]",
             "required": false,
-            "description": "String contains filter for \"stxValue\"",
+            "description": "Less-than filter for \"stxValue\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           },
           {
-            "name": "filter[stxValue$icontains]",
+            "name": "filter[stxValue$lte]",
             "required": false,
-            "description": "String case-insensitive contains filter for \"stxValue\"",
+            "description": "Less-than or equal filter for \"stxValue\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           },
           {
-            "name": "filter[stxValue$search]",
+            "name": "filter[stxValue$gt]",
             "required": false,
-            "description": "String full-text search filter for \"stxValue\"",
+            "description": "Greater-than filter for \"stxValue\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
+              "type": "number"
             }
           },
           {
-            "name": "filter[stxValue$startsWith]",
+            "name": "filter[stxValue$gte]",
             "required": false,
-            "description": "String startsWith filter for \"stxValue\"",
+            "description": "Greater-than or equal filter for \"stxValue\"",
             "in": "query",
             "style": "form",
             "explode": false,
             "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "filter[stxValue$endsWith]",
-            "required": false,
-            "description": "String endsWith filter for \"stxValue\"",
-            "in": "query",
-            "style": "form",
-            "explode": false,
-            "schema": {
-              "type": "string"
+              "type": "number"
             }
           },
           {
@@ -10573,10 +10551,10 @@
                 "type": "string"
               },
               "value": {
-                "type": "string"
+                "type": "number"
               },
               "stxValue": {
-                "type": "string"
+                "type": "number"
               },
               "usdValue": {
                 "type": "number"
@@ -10717,10 +10695,10 @@
                     "type": "string"
                   },
                   "value": {
-                    "type": "string"
+                    "type": "number"
                   },
                   "stxValue": {
-                    "type": "string"
+                    "type": "number"
                   },
                   "usdValue": {
                     "type": "number"
@@ -10841,10 +10819,10 @@
                     "type": "string"
                   },
                   "value": {
-                    "type": "string"
+                    "type": "number"
                   },
                   "stxValue": {
-                    "type": "string"
+                    "type": "number"
                   },
                   "usdValue": {
                     "type": "number"
