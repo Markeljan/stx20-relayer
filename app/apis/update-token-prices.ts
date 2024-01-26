@@ -139,15 +139,18 @@ const calculateAllHistoricalPriceChanges = (token: Token & { priceChanges: Price
     const intervalMilliseconds = INTERVAL_MILLISECONDS[interval];
     const intervalAgo = new Date(now.getTime() - intervalMilliseconds);
     // find the closest price change to the intervalAgo date (if the time has passed, we compare the oldest price change to the current price)
-    const closestPriceChange = priceChanges.reduce((closest, priceChange) => {
-      const closestDate = new Date(closest.updateDate);
-      const priceChangeDate = new Date(priceChange.updateDate);
-      if (priceChangeDate <= intervalAgo && priceChangeDate > closestDate) {
-        return priceChange;
-      } else {
-        return closest;
-      }
-    }, priceChanges[0]);
+    const closestPriceChange = priceChanges.reduce(
+      (closest, priceChange) => {
+        const closestDate = closest.updateDate;
+        const priceChangeDate = priceChange.updateDate;
+        if (priceChangeDate <= intervalAgo && priceChangeDate > closestDate) {
+          return priceChange;
+        } else {
+          return closest;
+        }
+      },
+      priceChanges[0] ?? { updateDate: now, priceUsd: currentPrice }
+    );
 
     // calculate the percentage change between the closest price change to the interval and the current price
     const percentageChange = ((currentPrice - closestPriceChange.priceUsd) / currentPrice) * 100;
